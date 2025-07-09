@@ -19,7 +19,6 @@ type Props = {
 
 const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
   const [animationStarted, setAnimationStarted] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const videoUrls = [
     "https://www.youtube.com/watch?v=fkNGu_yqv7U",
@@ -85,15 +84,9 @@ const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
                 </div>
               </div>
               <div className={s.right}>
-                <ReactPlayer
-                  url={videoUrls[sectionNumber - 1]}
-                  controls
-                  playing={videoPlaying}
-                  onPlay={() => setVideoPlaying(true)}
-                  onPause={() => setVideoPlaying(false)}
-                  width="100%"
-                  height="100%"
-                />
+                <div className={s.normal}>
+                  <ReactPlayer url={videoUrls[sectionNumber - 1]} controls />
+                </div>
               </div>
             </div>
           </div>

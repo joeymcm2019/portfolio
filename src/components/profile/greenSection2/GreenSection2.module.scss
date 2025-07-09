@@ -1,3 +1,5 @@
+@use "../SizeControl.scss" as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -19,7 +21,19 @@
         z-index: 2;
         width: 100%;
         margin-left: -5px;
+
+        @include ultraWideControl(
+          (
+            margin-left: -5px,
+          )
+        );
+
         filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
+
+        @media (min-width: $ultra_wide_break_point) {
+          filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
+        }
+
         svg {
           width: 100.5%;
           height: auto;
@@ -31,6 +45,13 @@
         margin-left: -5px;
         position: absolute;
         top: 31px;
+
+        @include ultraWideControl(
+          (
+            margin-left: -5px,
+            top: 31px,
+          )
+        );
 
         svg {
           width: 100.5%;
@@ -53,22 +74,57 @@
         width: 100%;
         gap: 80px;
 
+        @include ultraWideControl(
+          (
+            gap: 80px,
+          )
+        );
+
         .right {
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
-          width: 650px;
-          height: 365px;
+
           z-index: 3;
           margin-top: 40px;
+
+          @include ultraWideControl(
+            (
+              margin-top: 40px,
+            )
+          );
+
+          .normal {
+            width: 650px;
+            height: 365px;
+
+            @include ultraWideControl(
+              (
+                width: 650px,
+                height: 365px,
+              )
+            );
+          }
 
           iframe {
             width: 650px;
             height: 365px;
             border-radius: 10px;
 
+            @include ultraWideControl(
+              (
+                width: 650px,
+                height: 365px,
+                border-radius: 10px,
+              )
+            );
+
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+            @media (min-width: $ultra_wide_break_point) {
+              box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.5);
+            }
           }
         }
 
@@ -80,9 +136,23 @@
           margin-left: 60px;
           margin-top: 50px;
 
+          @include ultraWideControl(
+            (
+              margin-left: 60px,
+              margin-top: 50px,
+            )
+          );
+
           .top {
             width: 100%;
             margin-left: -10px;
+
+            @include ultraWideControl(
+              (
+                margin-left: -10px,
+              )
+            );
+
             button {
               background-color: transparent;
               border: none;
@@ -94,19 +164,45 @@
               align-items: center;
               gap: 30px;
 
+              @include ultraWideControl(
+                (
+                  gap: 30px,
+                )
+              );
+
               .infini {
                 width: 100 * 0.8px;
-
                 height: 81 * 0.8px;
+
+                @include ultraWideControl(
+                  (
+                    width: 100 * 0.8px,
+                    height: 81 * 0.8px,
+                  )
+                );
               }
 
               .valhalla {
                 width: 232 * 0.8px;
                 height: 83 * 0.8px;
+
+                @include ultraWideControl(
+                  (
+                    width: 232 * 0.8px,
+                    height: 83 * 0.8px,
+                  )
+                );
               }
 
               .title {
                 font-size: 37px;
+
+                @include ultraWideControl(
+                  (
+                    font-size: 37px,
+                  )
+                );
+
                 font-weight: normal;
                 color: white;
               }
@@ -130,6 +226,23 @@
 
           .bottom {
             margin-top: 32px;
+
+            @include ultraWideControl(
+              (
+                margin-top: 32px,
+              )
+            );
+
+            h5 {
+              font-size: 16.2px;
+
+              @include ultraWideControl(
+                (
+                  font-size: 16.2px,
+                )
+              );
+            }
+
             p {
               display: flex;
               flex-direction: column;

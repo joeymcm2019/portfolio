@@ -1,0 +1,63 @@
+@use "sass:math";
+$ultra_wide_break_point: 1440px;
+$defaultDSP: 899.98px;
+$max-width: 1439.98px;
+
+@mixin ultraWideControl(
+  $properties,
+  $important: false,
+  $start-point: $ultra_wide_break_point,
+  $shrink-factor: 1
+) {
+  @media (min-width: $start-point) {
+    @each $property, $value in $properties {
+      $vwValue: math.round(
+          (math.div($value * 100vw * $shrink-factor, $start-point) * 100)
+        ) *
+        0.01;
+
+      @if $important {
+        #{$property}: $vwValue !important;
+      } @else {
+        #{$property}: $vwValue;
+      }
+    }
+  }
+}
+
+@mixin dynamicControl(
+  $properties,
+  $dynamic-start-point: $defaultDSP,
+  $dynamic-end-point: $max-width,
+  $important: false
+) {
+  @media (max-width: $dynamic-end-point) and (min-width: $dynamic-start-point) {
+    @each $property, $value in $properties {
+      $vwValue: round((($value * 100vw / $dynamic-end-point) * 100)) / 100;
+
+      @if $important {
+        #{$property}: $vwValue !important;
+      } @else {
+        #{$property}: $vwValue;
+      }
+    }
+  }
+
+  @if $dynamic-start-point >0 {
+    @media (max-width: $dynamic-start-point) {
+      @each $property, $value in $properties {
+        @if $important {
+          #{$property}: round(
+              (($value * $dynamic-start-point) / $dynamic-end-point) * 100
+            ) /
+            100 !important;
+        } @else {
+          #{$property}: round(
+              (($value * $dynamic-start-point) / $dynamic-end-point) * 100
+            ) /
+            100;
+        }
+      }
+    }
+  }
+}
