@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Protest Strike";
+  src: url("../../public/assets/fonts/ProtestStrikeRegular.woff2")
+      format("woff2"),
+    url("../../public/assets/fonts/ProtestStrikeRegular.woff") format("woff"),
+    url("../../public//assets/fonts/ProtestStrikeRegular.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: normal;
+}
+
+@font-face {
+  font-family: "Oskar One";
+  src: url("../../public/assets/fonts/OskarOneRegular.woff2") format("woff2"),
+    url("../../public/assets/fonts/OskarOneRegular.woff") format("woff"),
+    url("../../public/assets/fonts/OskarOneRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pinyon Script";
+  src: url("../../public/assets/fonts/PinyonScript-Regular.woff2")
+      format("woff2"),
+    url("../../public/assets/fonts/PinyonScript-Regular.woff") format("woff"),
+    url("../../public/assets/fonts/PinyonScript-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: normal;
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../../public/assets/fonts/Verdana.woff2") format("woff2"),
+    url("../../public/assets/fonts/Verdana.woff") format("woff"),
+    url("../../public/assets/fonts/Verdana.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: normal;
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../../public/assets/fonts/Verdana_Bold_Italic.woff2")
+      format("woff2"),
+    url("../../public/assets/fonts/Verdana_Bold_Italic.woff") format("woff"),
+    url("../../public/assets/fonts/Verdana_Bold_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+  font-display: normal;
+}

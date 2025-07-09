@@ -1,0 +1,134 @@
+.container {
+  margin-top: -5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #014c8d;
+  padding-bottom: 250px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .profile_pic {
+      width: 242px;
+      height: auto;
+      margin-top: 95px;
+    }
+
+    .welcome {
+      margin-top: 30px;
+    }
+
+    .intro_text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 200%;
+      .intro {
+        margin-top: 30px;
+      }
+
+      .goal {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-style: italic;
+        font-weight: bold;
+      }
+    }
+
+    .dots {
+      margin-top: 70px;
+    }
+
+    .experience {
+      margin-top: 70px;
+    }
+
+    .logos {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 30px;
+      gap: 50px;
+      z-index: 2;
+
+      .infini_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        border: 0px;
+
+        cursor: pointer;
+
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.025);
+        }
+
+        &:active {
+          opacity: 0.8;
+        }
+
+        .infini {
+          width: 290px;
+          height: auto;
+          user-select: none;
+        }
+
+        .valhalla {
+          width: 261px;
+          height: 94px;
+          user-select: none;
+        }
+      }
+    }
+
+    .role {
+      width: 800px;
+      margin-top: 20px;
+      text-align: center;
+      z-index: 3;
+
+      a {
+        color: var(--color-aTag);
+      }
+    }
+
+    .experience_sections {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      margin-top: -80px;
+      padding-bottom: 100px;
+    }
+
+    .experience_sections_bg {
+      position: absolute;
+      top: 220px;
+      width: 100%;
+      height: 100%;
+      //background-color: #5e5e5e;
+    }
+
+    .blue_gap {
+      margin-top: 39px;
+    }
+
+    .experience_break {
+      margin-bottom: -140px;
+    }
+
+    .first_section {
+      margin-top: 80px;
+    }
+  }
+}
