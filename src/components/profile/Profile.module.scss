@@ -3,7 +3,7 @@
 $ultra_wide_break: 1908px;
 
 .container {
-  margin-top: -5px;
+  margin-top: -8px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -174,6 +174,7 @@ $ultra_wide_break: 1908px;
       @include dynamicControl(
         (
           margin-top: 70px,
+          font-size: 28px,
         ),
         $dynamic-start-point: $defaultDSP,
         $dynamic-end-point: 1300.98px
@@ -182,6 +183,7 @@ $ultra_wide_break: 1908px;
       @include ultraWideControl(
         (
           margin-top: 70px,
+          font-size: 28px,
         ),
         $start-point: $ultra_wide_break
       );

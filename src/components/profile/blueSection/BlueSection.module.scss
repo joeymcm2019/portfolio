@@ -505,6 +505,11 @@
               background-color: transparent;
               border: 2px solid #e9bb45;
               position: relative;
+
+              @media (max-width: 1300.98px) {
+                border: 1px solid #e9bb45;
+              }
+
               h4 {
                 position: relative;
                 color: #e1c15a;
