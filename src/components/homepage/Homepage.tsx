@@ -11,64 +11,48 @@ import { DirectionalFade } from "../animation/DirectionalFade";
 import logo from "./logo.png";
 import mountain from "./mountain.webp";
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * The main homepage component.
- *
- * This component renders the top navigation bar, the logo,
- * two lines, a header, a title, and a mountain image.
- *
- * It also renders the profile component.
- *
- * The component uses the DirectionalFade animation to
- * animate the logo, lines, header, title, and mountain.
- *
- * The component also uses the useEffect hook to scroll to
- * the top of the page when the component mounts.
- */
-/*******  33870381-a4ec-4c30-a6cd-0f40bb2a36d6  *******/ const Homepage =
-  () => {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+const Homepage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    return (
-      <div className={s.container}>
-        <div className={s.top}>
-          <TopNavBar />
-        </div>
-        <DirectionalFade delay={0.7} right className={s.logo} duration={0.4}>
-          <Image src={logo} alt="logo" />
-        </DirectionalFade>
-        <div className={s.content}>
-          <div className={s.lines}>
-            <DirectionalFade right delay={2}>
-              <LineSVG />
-            </DirectionalFade>
-            <DirectionalFade left delay={2}>
-              <div className={s.line2}>
-                <LineSVG />
-              </div>
-            </DirectionalFade>
-          </div>
-          <DirectionalFade delay={2} up>
-            <Typography variant="h1Large" font="secondary" className={s.header}>
-              I&apos;m Joey
-            </Typography>
-          </DirectionalFade>
-          <DirectionalFade delay={2} up>
-            <Typography variant="h3" font="primary" className={s.title}>
-              A senior UI developer
-            </Typography>
-          </DirectionalFade>
-          <DirectionalFade delay={3} up>
-            <Image src={mountain} alt="mountain" className={s.mountain} />
-          </DirectionalFade>
-          <Profile />
-        </div>
+  return (
+    <div className={s.container}>
+      <div className={s.top}>
+        <TopNavBar />
       </div>
-    );
-  };
+      <DirectionalFade delay={0.7} right className={s.logo} duration={0.4}>
+        <Image src={logo} alt="logo" />
+      </DirectionalFade>
+      <div className={s.content}>
+        <div className={s.lines}>
+          <DirectionalFade right delay={2}>
+            <LineSVG />
+          </DirectionalFade>
+          <DirectionalFade left delay={2}>
+            <div className={s.line2}>
+              <LineSVG />
+            </div>
+          </DirectionalFade>
+        </div>
+        <DirectionalFade delay={2} up>
+          <Typography variant="h1Large" font="secondary" className={s.header}>
+            I&apos;m Joey
+          </Typography>
+        </DirectionalFade>
+        <DirectionalFade delay={2} up>
+          <Typography variant="h3" font="primary" className={s.title}>
+            A senior UI developer
+          </Typography>
+        </DirectionalFade>
+        <DirectionalFade delay={3} up>
+          <Image src={mountain} alt="mountain" className={s.mountain} />
+        </DirectionalFade>
+        <Profile />
+      </div>
+    </div>
+  );
+};
 
 export default Homepage;
 

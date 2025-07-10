@@ -1,3 +1,7 @@
+@use "../profile/SizeControl.scss" as *;
+
+$ultra_wide_break: 1908px;
+
 .container {
   position: relative;
   display: flex;
@@ -6,8 +10,30 @@
   width: 100%;
   z-index: 1;
   background-color: rgb(0, 0, 0);
-
   border-bottom: 4px solid #fff;
+
+  @include ultraWideControl(
+    (
+      height: 144px,
+    ),
+    $start-point: $ultra_wide_break
+  );
+
+  @include dynamicControl(
+    (
+      height: 144px,
+    ),
+    $dynamic-start-point: $defaultDSP,
+    $dynamic-end-point: 1545.98px
+  );
+
+  @media (min-width: $defaultDSP) and (max-width: 1545.98px) {
+    height: 9.32vw;
+  }
+
+  @media (min-width: $ultra_wide_break) {
+    border-bottom: 0.21vw solid #fff;
+  }
 
   .circle {
     width: 286px;
@@ -19,8 +45,30 @@
     top: -20px;
     z-index: 2;
     border-radius: 50%;
-
     border: 5px solid #fff;
+
+    @include ultraWideControl(
+      (
+        width: 286px,
+        height: 286px,
+        top: -20px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
+    @include dynamicControl(
+      (
+        width: 286px,
+        height: 286px,
+        top: -20px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px
+    );
+
+    @media (min-width: $ultra_wide_break) {
+      border: 0.26vw solid #fff;
+    }
   }
 
   .block_layer {
@@ -31,5 +79,18 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
+
+    @media (min-width: $defaultDSP) and (max-width: 1545.98px) {
+      height: calc(9.32vw - 4px);
+      width: 20.71vw;
+    }
+
+    @include ultraWideControl(
+      (
+        width: 320px,
+        height: 140px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 }

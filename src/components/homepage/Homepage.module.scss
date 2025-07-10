@@ -1,3 +1,7 @@
+@use "../profile/SizeControl.scss" as *;
+
+$ultra_wide_break: 1908px;
+
 .container {
   position: relative;
   display: flex;
@@ -14,9 +18,41 @@
     top: 31px;
     z-index: 3;
 
+    @include dynamicControl(
+      (
+        margin-left: 15px,
+        top: 31px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px
+    );
+
+    @include ultraWideControl(
+      (
+        margin-left: 15px,
+        top: 31px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
     img {
       width: 150px;
       height: auto;
+
+      @include dynamicControl(
+        (
+          width: 150px,
+        ),
+        $dynamic-start-point: $defaultDSP,
+        $dynamic-end-point: 1545.98px
+      );
+
+      @include ultraWideControl(
+        (
+          width: 150px,
+        ),
+        $start-point: $ultra_wide_break
+      );
     }
   }
 }
@@ -26,6 +62,23 @@
   height: 280px;
   margin-bottom: -135px;
   animation: horizontal_reveal 2s ease-in-out;
+
+  @include dynamicControl(
+    (
+      height: 280px,
+      margin-bottom: -135px,
+    ),
+    $dynamic-start-point: $defaultDSP,
+    $dynamic-end-point: 1545.98px
+  );
+
+  @include ultraWideControl(
+    (
+      height: 280px,
+      margin-bottom: -135px,
+    ),
+    $start-point: $ultra_wide_break
+  );
 }
 
 .content {
@@ -35,13 +88,59 @@
   width: 100%;
   margin-top: 30px;
 
+  @include dynamicControl(
+    (
+      margin-top: 30px,
+    ),
+    $dynamic-start-point: $defaultDSP,
+    $dynamic-end-point: 1545.98px
+  );
+
+  @include ultraWideControl(
+    (
+      margin-top: 30px,
+    ),
+    $start-point: $ultra_wide_break
+  );
+
   .lines {
     display: flex;
     flex-direction: row;
     gap: 400px;
+
+    @include ultraWideControl(
+      (
+        gap: 400px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
+    @include dynamicControl(
+      (
+        gap: 400px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px
+    );
+
     svg {
       width: 480px;
       height: auto;
+
+      @include ultraWideControl(
+        (
+          width: 480px,
+        ),
+        $start-point: $ultra_wide_break
+      );
+
+      @include dynamicControl(
+        (
+          width: 480px,
+        ),
+        $dynamic-start-point: $defaultDSP,
+        $dynamic-end-point: 1545.98px
+      );
     }
 
     .line2 {
@@ -66,17 +165,74 @@
     width: 500px;
     height: 150px;
     margin-right: 10px;
+
+    @include dynamicControl(
+      (
+        width: 500px,
+        height: 150px,
+        margin-right: 10px,
+        margin-top: 45px,
+        font-size: 90px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1300.98px
+    );
+
+    @include ultraWideControl(
+      (
+        width: 500px,
+        height: 150px,
+        margin-right: 10px,
+        margin-top: 45px,
+        font-size: 90px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 
   .title {
     margin-top: 0px;
     margin-right: 0px;
+
+    @include dynamicControl(
+      (
+        margin-top: 0px,
+        margin-right: 0px,
+        font-size: 20px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1300.98px
+    );
+
+    @include ultraWideControl(
+      (
+        font-size: 20px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 
   .mountain {
     margin-top: 90px;
     width: 1200px;
     height: auto;
+
+    @include dynamicControl(
+      (
+        margin-top: 90px,
+        width: 1200px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1300.98px
+    );
+
+    @include ultraWideControl(
+      (
+        margin-top: 90px,
+        width: 1200px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 }
 
