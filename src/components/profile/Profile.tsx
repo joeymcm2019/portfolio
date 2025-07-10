@@ -183,7 +183,8 @@ const Profile = () => {
                   title="Legal"
                   link={"https://www.valhallafoundation.xyz/terms-of-service"}
                   text={`
-            • Fully implemented these pages from scratch, following mocks 1:1, and accounted for all screen sizes.\n
+            • Fully implemented these pages from scratch, followed mocks 1:1, and accounted for all screen sizes.\n
+            • Matched formatting of legal documents by using my own script for each page.\n
             • https://www.valhallafoundation.xyz/terms-of-service\n
             • https://www.valhallafoundation.xyz/privacy-policy\n
             • https://www.valhallafoundation.xyz/dao-constitution\n
@@ -212,7 +213,8 @@ const Profile = () => {
           </a>
           ). I built their webstore UI, their leaderboard UI, their God Vaults
           UI, and updated the UI on just about every page on their King of
-          Destiny mobile marketplace.
+          Destiny mobile marketplace. I also worked on a couple of pages that
+          never officially got released {"("}Mount Olympus, and Swap{")"}.
         </Typography>
         <div className={s.experience_sections}>
           {showExperience && (

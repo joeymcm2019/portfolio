@@ -77,6 +77,8 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                       <ReactPlayer
                         url={"https://youtu.be/I_di5XDw1fU"}
                         controls
+                        width="100%"
+                        height="100%"
                       />
                     </div>
                     <div
@@ -94,6 +96,8 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                       <ReactPlayer
                         url={"https://www.youtube.com/watch?v=RB1OTPWRNzs"}
                         controls
+                        width="100%"
+                        height="100%"
                       />
                     </div>
                   </div>
@@ -102,6 +106,8 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                     <ReactPlayer
                       url={`${youtubeUrls[sectionNumber - 2]}`}
                       controls
+                      width="100%"
+                      height="100%"
                     />
                   </div>
                 )}

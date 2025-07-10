@@ -22,6 +22,12 @@
         width: 100%;
         margin-left: -5px;
 
+        @include dynamicControl(
+          (
+            margin-left: -5px,
+          )
+        );
+
         @include ultraWideControl(
           (
             margin-left: -5px,
@@ -29,6 +35,9 @@
         );
 
         filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
+        @media (min-width: $defaultDSP) and (max-width: $max-width) {
+          filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
+        }
 
         @media (min-width: $ultra_wide_break_point) {
           filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
@@ -45,6 +54,13 @@
         margin-left: -5px;
         position: absolute;
         top: 31px;
+
+        @include dynamicControl(
+          (
+            margin-left: -5px,
+            top: 31px,
+          )
+        );
 
         @include ultraWideControl(
           (
@@ -74,6 +90,12 @@
         width: 100%;
         gap: 80px;
 
+        @include dynamicControl(
+          (
+            gap: 80px,
+          )
+        );
+
         @include ultraWideControl(
           (
             gap: 80px,
@@ -89,6 +111,12 @@
           z-index: 3;
           margin-top: 40px;
 
+          @include dynamicControl(
+            (
+              margin-top: 40px,
+            )
+          );
+
           @include ultraWideControl(
             (
               margin-top: 40px,
@@ -98,6 +126,13 @@
           .normal {
             width: 650px;
             height: 365px;
+
+            @include dynamicControl(
+              (
+                width: 650px,
+                height: 365px,
+              )
+            );
 
             @include ultraWideControl(
               (
@@ -112,6 +147,14 @@
             height: 365px;
             border-radius: 10px;
 
+            @include dynamicControl(
+              (
+                width: 650px,
+                height: 365px,
+                border-radius: 10px,
+              )
+            );
+
             @include ultraWideControl(
               (
                 width: 650px,
@@ -121,6 +164,10 @@
             );
 
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+            @media (min-width: $defaultDSP) and (max-width: $max-width) {
+              box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.5);
+            }
 
             @media (min-width: $ultra_wide_break_point) {
               box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.5);
@@ -136,6 +183,13 @@
           margin-left: 60px;
           margin-top: 50px;
 
+          @include dynamicControl(
+            (
+              margin-left: 60px,
+              margin-top: 50px,
+            )
+          );
+
           @include ultraWideControl(
             (
               margin-left: 60px,
@@ -146,6 +200,12 @@
           .top {
             width: 100%;
             margin-left: -10px;
+
+            @include dynamicControl(
+              (
+                margin-left: -10px,
+              )
+            );
 
             @include ultraWideControl(
               (
@@ -164,6 +224,12 @@
               align-items: center;
               gap: 30px;
 
+              @include dynamicControl(
+                (
+                  gap: 30px,
+                )
+              );
+
               @include ultraWideControl(
                 (
                   gap: 30px,
@@ -173,6 +239,13 @@
               .infini {
                 width: 100 * 0.8px;
                 height: 81 * 0.8px;
+
+                @include dynamicControl(
+                  (
+                    width: 100 * 0.8px,
+                    height: 81 * 0.8px,
+                  )
+                );
 
                 @include ultraWideControl(
                   (
@@ -186,6 +259,13 @@
                 width: 232 * 0.8px;
                 height: 83 * 0.8px;
 
+                @include dynamicControl(
+                  (
+                    width: 232 * 0.8px,
+                    height: 83 * 0.8px,
+                  )
+                );
+
                 @include ultraWideControl(
                   (
                     width: 232 * 0.8px,
@@ -196,6 +276,12 @@
 
               .title {
                 font-size: 37px;
+
+                @include dynamicControl(
+                  (
+                    font-size: 37px,
+                  )
+                );
 
                 @include ultraWideControl(
                   (
@@ -227,6 +313,12 @@
           .bottom {
             margin-top: 32px;
 
+            @include dynamicControl(
+              (
+                margin-top: 32px,
+              )
+            );
+
             @include ultraWideControl(
               (
                 margin-top: 32px,
@@ -235,6 +327,12 @@
 
             h5 {
               font-size: 16.2px;
+
+              @include dynamicControl(
+                (
+                  font-size: 16.2px,
+                )
+              );
 
               @include ultraWideControl(
                 (

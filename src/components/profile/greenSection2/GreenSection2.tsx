@@ -85,7 +85,12 @@ const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
               </div>
               <div className={s.right}>
                 <div className={s.normal}>
-                  <ReactPlayer url={videoUrls[sectionNumber - 1]} controls />
+                  <ReactPlayer
+                    url={videoUrls[sectionNumber - 1]}
+                    controls
+                    width="100%"
+                    height="100%"
+                  />
                 </div>
               </div>
             </div>
