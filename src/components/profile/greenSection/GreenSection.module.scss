@@ -1,5 +1,7 @@
 @use "../SizeControl.scss" as *;
 
+$mobile-factor: 0.75;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -34,7 +36,17 @@
           )
         );
 
+        @include mobileControl(
+          (
+            margin-left: -2px,
+          )
+        );
+
         filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
+
+        @media (max-width: $mobile-breakpoint) {
+          filter: drop-shadow(0px 3.5vw 0px rgb(0, 0, 0));
+        }
 
         @media (min-width: $defaultDSP) and (max-width: $max-width) {
           filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
@@ -67,6 +79,13 @@
           (
             margin-left: -5px,
             top: 31px,
+          )
+        );
+
+        @include mobileControl(
+          (
+            margin-left: -1px,
+            top: 25px,
           )
         );
 
@@ -103,6 +122,18 @@
           )
         );
 
+        @include mobileControl(
+          (
+            gap: 50px,
+          )
+        );
+
+        @media (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+        }
+
         .right {
           display: flex;
           align-items: center;
@@ -124,6 +155,12 @@
             )
           );
 
+          @include mobileControl(
+            (
+              margin-top: 0px,
+            )
+          );
+
           .normal {
             width: 650px;
             height: 365px;
@@ -139,6 +176,13 @@
               (
                 width: 650px,
                 height: 365px,
+              )
+            );
+
+            @include mobileControl(
+              (
+                width: 650px * $mobile-factor,
+                height: 365px * $mobile-factor,
               )
             );
           }
@@ -164,6 +208,14 @@
               )
             );
 
+            @include mobileControl(
+              (
+                width: 650px * $mobile-factor,
+                height: 365px * $mobile-factor,
+                border-radius: 5px,
+              )
+            );
+
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
             @media (min-width: $defaultDSP) and (max-width: $max-width) {
@@ -172,6 +224,10 @@
 
             @media (min-width: $ultra_wide_break_point) {
               box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.5);
+            }
+
+            @media (max-width: $mobile-breakpoint) {
+              box-shadow: 1vw 1vw 0.8vw rgba(0, 0, 0, 0.5);
             }
           }
         }
@@ -183,6 +239,7 @@
           align-items: start;
           margin-left: 60px;
           margin-top: 40px;
+          $mobile-factor-left: 0.75;
 
           @include dynamicControl(
             (
@@ -198,6 +255,18 @@
             )
           );
 
+          @include mobileControl(
+            (
+              margin-left: 0px,
+              margin-top: 0px,
+            )
+          );
+
+          @media (max-width: $mobile-breakpoint) {
+            width: 100%;
+            align-items: center;
+          }
+
           .top {
             width: 100%;
             margin-left: -10px;
@@ -211,6 +280,12 @@
             @include ultraWideControl(
               (
                 margin-left: -10px,
+              )
+            );
+
+            @include mobileControl(
+              (
+                margin-left: -8px,
               )
             );
 
@@ -237,6 +312,12 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  gap: 50px,
+                )
+              );
+
               .infini {
                 width: 100 * 0.8px;
                 height: 81 * 0.8px;
@@ -252,6 +333,13 @@
                   (
                     width: 100 * 0.8px,
                     height: 81 * 0.8px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 100px * $mobile-factor-left,
+                    height: 81px * $mobile-factor-left,
                   )
                 );
               }
@@ -273,6 +361,13 @@
                     height: 83 * 0.8px,
                   )
                 );
+
+                @include mobileControl(
+                  (
+                    width: 232px * $mobile-factor-left,
+                    height: 83px * $mobile-factor-left,
+                  )
+                );
               }
 
               .title {
@@ -286,6 +381,12 @@
                 );
 
                 @include ultraWideControl(
+                  (
+                    font-size: 28px,
+                  )
+                );
+
+                @include mobileControl(
                   (
                     font-size: 28px,
                   )
@@ -318,6 +419,16 @@
               )
             );
 
+            @include mobileControl(
+              (
+                margin-top: 40px,
+              )
+            );
+
+            @media (max-width: $mobile-breakpoint) {
+              width: 90%;
+            }
+
             h5 {
               font-size: 16.2px;
 
@@ -330,6 +441,12 @@
               @include ultraWideControl(
                 (
                   font-size: 16.2px,
+                )
+              );
+
+              @include mobileControl(
+                (
+                  font-size: 14px,
                 )
               );
             }

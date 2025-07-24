@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 import s from "./Homepage.module.scss";
 
@@ -15,6 +16,8 @@ const Homepage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  //   const isMobile = useMediaQuery({ query: "(max-width: 600.98px)" });
 
   return (
     <div className={s.container}>
@@ -35,6 +38,7 @@ const Homepage = () => {
             </div>
           </DirectionalFade>
         </div>
+
         <DirectionalFade delay={2} up>
           <Typography variant="h1Large" font="secondary" className={s.header}>
             I&apos;m Joey

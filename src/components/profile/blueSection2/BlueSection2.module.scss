@@ -1,5 +1,7 @@
 @use "../SizeControl.scss" as *;
 
+$mobile-factor: 0.75;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -58,7 +60,17 @@
           )
         );
 
+        @include mobileControl(
+          (
+            margin-left: -2px,
+          )
+        );
+
         filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
+
+        @media (max-width: $mobile-breakpoint) {
+          filter: drop-shadow(0px 3.5vw 0px rgb(0, 0, 0));
+        }
 
         @media (min-width: $defaultDSP) and (max-width: $max-width) {
           filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
@@ -91,6 +103,13 @@
           (
             margin-left: -5px,
             top: 31px,
+          )
+        );
+
+        @include mobileControl(
+          (
+            margin-left: -1px,
+            top: 25px,
           )
         );
 
@@ -127,6 +146,18 @@
           )
         );
 
+        @include mobileControl(
+          (
+            gap: 50px,
+          )
+        );
+
+        @media (max-width: $mobile-breakpoint) {
+          flex-direction: column-reverse;
+          justify-content: center;
+          height: 100%;
+        }
+
         .left {
           display: flex;
           flex-direction: column;
@@ -146,6 +177,13 @@
           @include ultraWideControl(
             (
               margin-left: 60px,
+            )
+          );
+
+          @include mobileControl(
+            (
+              margin-left: 0px,
+              margin-bottom: 90px,
             )
           );
 
@@ -172,6 +210,13 @@
               )
             );
 
+            @include mobileControl(
+              (
+                width: 650px * $mobile-factor,
+                height: 365px * $mobile-factor,
+              )
+            );
+
             iframe {
               border-radius: 10px;
               width: 650 * 0.9px;
@@ -190,6 +235,14 @@
                   border-radius: 10px,
                   width: 650 * 0.9px,
                   height: 365 * 0.9px,
+                )
+              );
+
+              @include mobileControl(
+                (
+                  border-radius: 5px,
+                  width: 650 * 0.9px * $mobile-factor,
+                  height: 365 * 0.9px * $mobile-factor,
                 )
               );
             }
@@ -216,6 +269,14 @@
                   width: 650 * 0.9px,
                   height: 365 * 0.9px,
                   left: 35px,
+                )
+              );
+
+              @include mobileControl(
+                (
+                  width: 650 * 0.9px * $mobile-factor,
+                  height: 365 * 0.9px * $mobile-factor,
+                  left: 35px * $mobile-factor,
                 )
               );
 
@@ -254,6 +315,15 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  width: 650 * 0.9px * $mobile-factor,
+                  height: 365 * 0.9px * $mobile-factor,
+                  left: 80px * $mobile-factor,
+                  top: 35px * $mobile-factor,
+                )
+              );
+
               iframe {
                 width: 650 * 0.9 * 0.97px;
                 height: 365 * 0.9 * 0.97px;
@@ -270,6 +340,13 @@
                   (
                     width: 650 * 0.9 * 0.97px,
                     height: 365 * 0.9 * 0.97px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 650 * 0.9 * 0.97px * $mobile-factor,
+                    height: 365 * 0.9 * 0.97px * $mobile-factor,
                   )
                 );
               }
@@ -299,6 +376,13 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  top: 17px * $mobile-factor,
+                  left: 15px * $mobile-factor,
+                )
+              );
+
               iframe {
                 width: 576px;
                 height: 324px;
@@ -315,6 +399,13 @@
                   (
                     width: 576px,
                     height: 324px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 576px * $mobile-factor,
+                    height: 324px * $mobile-factor,
                   )
                 );
               }
@@ -344,6 +435,13 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  left: 95px * $mobile-factor,
+                  top: 17px * $mobile-factor,
+                )
+              );
+
               iframe {
                 width: 576px;
                 height: 324px;
@@ -360,6 +458,13 @@
                   (
                     width: 576px,
                     height: 324px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 576px * $mobile-factor,
+                    height: 324px * $mobile-factor,
                   )
                 );
               }
@@ -389,6 +494,14 @@
                 height: 365px,
               )
             );
+
+            @include mobileControl(
+              (
+                border-radius: 5px,
+                width: 650px * $mobile-factor,
+                height: 365px * $mobile-factor,
+              )
+            );
           }
 
           .normal {
@@ -408,6 +521,14 @@
                 height: 365px,
               )
             );
+
+            @include mobileControl(
+              (
+                width: 650px * $mobile-factor,
+                height: 365px * $mobile-factor,
+              )
+            );
+
             iframe {
               box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
@@ -417,6 +538,10 @@
 
               @media (min-width: $ultra_wide_break_point) {
                 box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.5);
+              }
+
+              @media (max-width: $mobile-breakpoint) {
+                box-shadow: 0.8vw 0.8vw 0.8vw rgba(0, 0, 0, 0.5);
               }
             }
           }
@@ -465,13 +590,27 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  width: 200px * $mobile-factor,
+                  height: 40px * $mobile-factor,
+                  border-radius: 5px * $mobile-factor,
+                )
+              );
+
               transition: transform 0.3s ease-in-out;
 
-              &:hover {
-                transform: scale(0.98);
-                cursor: pointer;
+              @media (max-width: $targetViewWidth) {
+                &:active {
+                  transform: scale(0.98);
+                }
               }
 
+              @media (min-width: $targetViewWidth) {
+                &:hover {
+                  transform: scale(0.98);
+                }
+              }
               h4 {
                 font-size: 18px;
                 letter-spacing: 0.5px;
@@ -487,6 +626,13 @@
                   (
                     font-size: 18px,
                     letter-spacing: 0.5px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    font-size: 13px,
+                    letter-spacing: 0.5px * $mobile-factor,
                   )
                 );
               }
@@ -526,33 +672,66 @@
                 z-index: 0;
               }
 
-              &:hover::before {
-                transform: scaleX(1);
-                transform-origin: left;
-              }
-
-              &::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background-color: rgba(0, 0, 0, 0);
-                transition: background-color 0.3s ease-in-out;
-                pointer-events: none;
-              }
-
-              &:active::after {
-                border-radius: 3px;
-
-                @media (max-width: 575.98px) {
-                  border-radius: 0px;
+              @media (min-width: $mobile-breakpoint) {
+                &:hover::before {
+                  transform: scaleX(1);
+                  transform-origin: left;
                 }
 
-                background-color: rgba(0, 0, 0, 0.5);
+                &::after {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  background-color: rgba(0, 0, 0, 0);
+                  transition: background-color 0.3s ease-in-out;
+                  pointer-events: none;
+                }
+
+                &:active::after {
+                  border-radius: 3px;
+
+                  @media (max-width: 575.98px) {
+                    border-radius: 0px;
+                  }
+
+                  background-color: rgba(0, 0, 0, 0.5);
+                }
+
+                &:hover h4 {
+                  color: #000;
+                  transition: color 1s ease-in-out;
+                }
               }
 
-              &:hover h4 {
-                color: #000;
-                transition: color 1s ease-in-out;
+              @media (max-width: $mobile-breakpoint) {
+                &:active::before {
+                  transform: scaleX(1);
+                  transform-origin: left;
+                }
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  background-color: rgba(0, 0, 0, 0);
+                  transition: background-color 0.3s ease-in-out;
+                  pointer-events: none;
+                }
+
+                &:active::after {
+                  border-radius: 3px;
+
+                  @media (max-width: 575.98px) {
+                    border-radius: 0px;
+                  }
+
+                  background-color: rgba(0, 0, 0, 0.5);
+                }
+
+                &:active h4 {
+                  color: #000;
+                  transition: color 1s ease-in-out;
+                }
               }
             }
           }
@@ -565,6 +744,8 @@
           align-items: start;
           margin-top: -10px;
 
+          $mobile-factor-right: 0.75;
+
           @include dynamicControl(
             (
               margin-top: -10px,
@@ -576,6 +757,17 @@
               margin-top: -10px,
             )
           );
+
+          @include mobileControl(
+            (
+              margin-top: 85px,
+            )
+          );
+
+          @media (max-width: $mobile-breakpoint) {
+            width: 100%;
+            align-items: center;
+          }
 
           .top {
             width: 100%;
@@ -590,6 +782,12 @@
             @include ultraWideControl(
               (
                 margin-left: -10px,
+              )
+            );
+
+            @include mobileControl(
+              (
+                margin-left: -8px,
               )
             );
 
@@ -616,6 +814,12 @@
                 )
               );
 
+              @include mobileControl(
+                (
+                  gap: 20px,
+                )
+              );
+
               .infini {
                 width: 100 * 0.8px;
                 height: 81 * 0.8px;
@@ -631,6 +835,13 @@
                   (
                     width: 100 * 0.8px,
                     height: 81 * 0.8px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 100px * $mobile-factor-right,
+                    height: 81px * $mobile-factor-right,
                   )
                 );
               }
@@ -670,15 +881,29 @@
                     font-size: 37px,
                   )
                 );
+
+                @include mobileControl(
+                  (
+                    font-size: 37px,
+                  )
+                );
               }
 
               transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-              &:hover:not(:disabled) {
-                transform: scale(0.96);
+              @media (min-width: $mobile-breakpoint) {
+                &:hover:not(:disabled) {
+                  transform: scale(0.96);
+                }
+                &:active:not(:disabled) {
+                  opacity: 0.8;
+                }
               }
-              &:active:not(:disabled) {
-                opacity: 0.8;
+
+              @media (max-width: $mobile-breakpoint) {
+                &:active:not(:disabled) {
+                  transform: scale(0.96);
+                }
               }
             }
             button:disabled {
@@ -704,6 +929,16 @@
               )
             );
 
+            @include mobileControl(
+              (
+                margin-top: 28px,
+              )
+            );
+
+            @media (max-width: $mobile-breakpoint) {
+              width: 90%;
+            }
+
             h5 {
               font-size: 16.2px;
 
@@ -716,6 +951,12 @@
               @include ultraWideControl(
                 (
                   font-size: 16.2px,
+                )
+              );
+
+              @include mobileControl(
+                (
+                  font-size: 14px,
                 )
               );
             }

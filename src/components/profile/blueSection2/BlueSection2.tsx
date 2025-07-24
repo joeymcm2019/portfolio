@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
+import { useMediaQuery } from "react-responsive";
 
 import s from "./BlueSection2.module.scss";
 
@@ -21,6 +22,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [toggle, setToggle] = useState(0);
   const [startSwapAnimation, setStartSwapAnimation] = useState(false);
+  const isMobile = useMediaQuery({ query: "(max-width: 1033.98px)" });
 
   const youtubeUrls = [
     "https://www.youtube.com/watch?v=ZfbNIOu7edE",
@@ -42,7 +44,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
         <div className={s.content}>
           <div className={s.blue_container}>
             <div className={s.blue_background}>
-              <UltraWideBG />
+              {isMobile ? <MobileBG /> : <UltraWideBG />}
             </div>
             <div
               className={classNames(
@@ -50,7 +52,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_line_active
               )}
             >
-              <GoldLineUW />
+              {isMobile ? <MobileGold /> : <GoldLineUW />}
             </div>
 
             <div
@@ -224,6 +226,56 @@ const GoldLineUW = () => {
           y1="1040.31"
           x2="1810.83"
           y2="1040.31"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#7D6629" />
+          <stop offset="0.15" stop-color="#E9BB45" />
+          <stop offset="0.5" stop-color="#7D6629" />
+          <stop offset="0.85" stop-color="#E9BB45" />
+          <stop offset="1" stop-color="#7D6629" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+const MobileBG = () => {
+  return (
+    <svg
+      width="1034"
+      height="1463"
+      viewBox="0 0 1034 1463"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.0200195 0C0.0200195 58 14.571 82 47.7643 82H509.114C514.721 82 528.12 85.8553 533.795 93.3447H970.389C970.51 93.3368 1033.02 89.2511 1033.02 151.544V442H1032.6L1032.6 1344.98L1009.72 1352.63L910.238 1387H86.4198C22.4772 1387 8.5957 1396.48 0.00270807 1462.48C-0.00305634 1455.48 0.00250777 1449.98 0.00270807 1462.48L-0.000488281 432.5H0.0200195V0Z"
+        fill="#00213A"
+      />
+    </svg>
+  );
+};
+
+const MobileGold = () => {
+  return (
+    <svg
+      width="1034"
+      height="1463"
+      viewBox="0 0 1034 1463"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.0205078 0C0.0205078 58 14.5715 82 47.7647 82H509.114C514.722 82 528.121 85.8553 533.795 93.3447H970.39C970.51 93.3368 1033.02 89.2511 1033.02 151.544V442H1032.6L1032.6 1344.98L1009.72 1352.63L910.239 1387H86.4203C22.4776 1387 8.59619 1396.48 0.00319635 1462.48C-0.00256806 1455.48 0.00299606 1449.98 0.00319635 1462.48L0 432.5H0.0205078V0Z"
+        fill="url(#paint0_linear_387_62)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_387_62"
+          x1="60.237"
+          y1="1462.48"
+          x2="976.317"
+          y2="1462.48"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#7D6629" />

@@ -35,6 +35,10 @@ $ultra_wide_break: 1908px;
       $start-point: $ultra_wide_break
     );
 
+    @media (max-width: $mobile-breakpoint) {
+      top: 19px;
+    }
+
     img {
       width: 150px;
       height: auto;
@@ -103,6 +107,10 @@ $ultra_wide_break: 1908px;
     $start-point: $ultra_wide_break
   );
 
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: 20px;
+  }
+
   .lines {
     display: flex;
     flex-direction: row;
@@ -123,6 +131,13 @@ $ultra_wide_break: 1908px;
       $dynamic-end-point: 1545.98px
     );
 
+    @media (max-width: $mobile-breakpoint) {
+      gap: 220px;
+    }
+
+    @media (max-width: 600.98px) {
+    }
+
     svg {
       width: 480px;
       height: auto;
@@ -141,6 +156,17 @@ $ultra_wide_break: 1908px;
         $dynamic-start-point: $defaultDSP,
         $dynamic-end-point: 1545.98px
       );
+
+      @include mobileControl(
+        (
+          width: 160px,
+        )
+      );
+
+      @media (max-width: 600.98px) {
+        width: 160px;
+        opacity: 0;
+      }
     }
 
     .line2 {
@@ -188,6 +214,16 @@ $ultra_wide_break: 1908px;
       ),
       $start-point: $ultra_wide_break
     );
+
+    @include mobileControl2(
+      (
+        width: 500px,
+        height: 150px,
+        margin-right: 10px,
+        margin-top: 70px,
+        font-size: 90px,
+      )
+    );
   }
 
   .title {
@@ -209,6 +245,12 @@ $ultra_wide_break: 1908px;
         font-size: 20px,
       ),
       $start-point: $ultra_wide_break
+    );
+
+    @include mobileControl2(
+      (
+        font-size: 20px,
+      )
     );
   }
 
@@ -232,6 +274,13 @@ $ultra_wide_break: 1908px;
         width: 1200px,
       ),
       $start-point: $ultra_wide_break
+    );
+
+    @include mobileControl2(
+      (
+        margin-top: 140px,
+        width: 680px,
+      )
     );
   }
 }

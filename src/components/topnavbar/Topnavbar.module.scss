@@ -27,6 +27,11 @@ $ultra_wide_break: 1908px;
     $dynamic-end-point: 1545.98px
   );
 
+  @media (max-width: $mobile-breakpoint) {
+    height: 90px;
+    border-bottom: 2px solid #fff;
+  }
+
   @media (min-width: $defaultDSP) and (max-width: 1545.98px) {
     height: 9.32vw;
   }
@@ -66,6 +71,17 @@ $ultra_wide_break: 1908px;
       $dynamic-end-point: 1545.98px
     );
 
+    @media (max-width: $mobile-breakpoint) {
+      width: 180px;
+      height: 180px;
+      top: -10px;
+      border: 3px solid #fff;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      border: 2px solid #fff;
+    }
+
     @media (min-width: $ultra_wide_break) {
       border: 0.26vw solid #fff;
     }
@@ -83,6 +99,10 @@ $ultra_wide_break: 1908px;
     @media (min-width: $defaultDSP) and (max-width: 1545.98px) {
       height: calc(9.32vw - 4px);
       width: 20.71vw;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      height: 88px;
     }
 
     @include ultraWideControl(

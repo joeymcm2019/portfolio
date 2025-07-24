@@ -2,6 +2,8 @@
 $ultra_wide_break_point: 1440px;
 $defaultDSP: 1033.98px;
 $max-width: 1439.98px;
+$targetViewWidth: 600.98px;
+$mobile-breakpoint: 1033.98px;
 
 @mixin ultraWideControl(
   $properties,
@@ -57,6 +59,38 @@ $max-width: 1439.98px;
             ) /
             100;
         }
+      }
+    }
+  }
+}
+
+@mixin mobileControl(
+  $properties,
+  $important: false,
+  $targetWidth: $targetViewWidth
+) {
+  @media (max-width: $mobile-breakpoint) {
+    @each $property, $value in $properties {
+      $vwValue: round((($value * 100vw / $targetWidth) * 100)) / 100;
+
+      @if $important {
+        #{$property}: $vwValue !important;
+      } @else {
+        #{$property}: $vwValue;
+      }
+    }
+  }
+}
+
+@mixin mobileControl2($properties, $important: false, $targetWidth: 600px) {
+  @media (max-width: 600.98px) {
+    @each $property, $value in $properties {
+      $vwValue: round((($value * 100vw / $targetWidth) * 100)) / 100;
+
+      @if $important {
+        #{$property}: $vwValue !important;
+      } @else {
+        #{$property}: $vwValue;
       }
     }
   }

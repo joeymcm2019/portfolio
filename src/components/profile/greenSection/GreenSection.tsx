@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
+import { useMediaQuery } from "react-responsive";
 
 import s from "./GreenSection.module.scss";
 
@@ -20,6 +21,7 @@ type Props = {
 
 const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
   const [animationStarted, setAnimationStarted] = useState(false);
+  const isMobile = useMediaQuery({ query: "(max-width: 1033.98px)" });
 
   const video_urls = [
     "https://www.youtube.com/watch?v=BGaHxgRMxXU",
@@ -33,7 +35,7 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
         <div className={s.content}>
           <div className={s.blue_container}>
             <div className={s.blue_background}>
-              <UltraWideBG />
+              {isMobile ? <MobileBG /> : <UltraWideBG />}
             </div>
             <div
               className={classNames(
@@ -41,7 +43,7 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_line_active
               )}
             >
-              <GoldLineUW />
+              {isMobile ? <GoldMobile /> : <GoldLineUW />}
             </div>
 
             <div className={s.video_and_text}>
@@ -151,6 +153,56 @@ const GoldLineUW = () => {
           <stop offset="1" stop-color="#7D6629" />
         </linearGradient>
       </defs>
+    </svg>
+  );
+};
+
+const GoldMobile = () => {
+  return (
+    <svg
+      width="1033"
+      height="1462"
+      viewBox="0 0 1033 1462"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1033 0C1032.93 45.8475 1032.77 194.507 1032.64 387.214C1032.59 494.927 1032.63 1263.03 1032.64 1370.18L923.024 1402H49.5989C18.0095 1406.64 0.255608 1417.09 0.234266 1461C0.22082 1488.66 0.0377721 656.109 0.00586631 442.889H6.93961e-06C0.000391912 425.997 0.000578319 408.823 0.000983502 391.634C0.000887934 387.161 -9.14801e-05 382.757 6.93961e-06 378.427H0.00196006C0.00514775 244.162 0.00781362 113.157 0.00781944 112.989H58.7535L77.7765 101.642H325.077L340.295 112.989H425.9L522.937 96.131H924.994C978.142 96.131 1031.61 78.6389 1033 0Z"
+        fill="url(#paint0_linear_388_64)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_388_64"
+          x1="60.236"
+          y1="1461.67"
+          x2="976.3"
+          y2="1461.67"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#7D6629" />
+          <stop offset="0.15" stop-color="#E9BB45" />
+          <stop offset="0.5" stop-color="#7D6629" />
+          <stop offset="0.85" stop-color="#E9BB45" />
+          <stop offset="1" stop-color="#7D6629" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+const MobileBG = () => {
+  return (
+    <svg
+      width="1033"
+      height="1462"
+      viewBox="0 0 1033 1462"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1033 0C1032.93 45.8475 1032.77 194.507 1032.64 387.214C1032.59 494.927 1032.63 1263.03 1032.64 1370.18L923.024 1402H49.5989C18.0095 1406.64 0.255608 1417.09 0.234266 1461C0.22082 1488.66 0.0377721 656.109 0.00586631 442.889H6.93961e-06C0.000391912 425.997 0.000578319 408.823 0.000983502 391.634C0.000887934 387.161 -9.14801e-05 382.757 6.93961e-06 378.427H0.00196006C0.00514775 244.162 0.00781362 113.157 0.00781944 112.989H58.7535L77.7765 101.642H325.077L340.295 112.989H425.9L522.937 96.131H924.994C978.142 96.131 1031.61 78.6389 1033 0Z"
+        fill="#003B06"
+      />
     </svg>
   );
 };

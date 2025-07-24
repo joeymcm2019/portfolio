@@ -205,7 +205,11 @@ const Profile = () => {
             <Image src={infiniLogo} alt="infinilogo" className={s.infini} />
           </button>
         </div>
-        <Typography variant="h4" font="primary" className={s.role}>
+        <Typography
+          variant="h4"
+          font="primary"
+          className={classNames(s.role, s.role2)}
+        >
           I also did a substantial amount of UI/UX work on InfiniGods&apos;
           corporate website (
           <a href="https://www.infinigods.com" target="_blank">
