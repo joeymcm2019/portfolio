@@ -110,21 +110,21 @@ $mobile-factor: 0.75;
 
         @include dynamicControl(
           (
-            margin-left: -5px,
+            margin-left: -4px,
             top: 31px,
           )
         );
 
         @include ultraWideControl(
           (
-            margin-left: -5px,
+            margin-left: -4px,
             top: 31px,
           )
         );
 
         @include mobileControl(
           (
-            margin-left: -1px,
+            margin-left: 0px,
             top: 25px,
           )
         );
