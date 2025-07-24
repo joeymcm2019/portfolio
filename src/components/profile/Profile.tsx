@@ -113,7 +113,10 @@ const Profile = () => {
             popups {"(used for staking UI)"}, and added a zoom animation to make
             popups open and close more smoothly. The result was a UI/UX that
             greatly stood out from competitors and that drew the community in
-            with excitement {"(the site had tens of thousands of users)."}
+            with excitement {"(the site had tens of thousands of users)."}{" "}
+            <a href="/LetterOfRecommendation.pdf" download="LOR_McMahon">
+              Letter of recommendation from InfiniGods&apos; COO (download).
+            </a>
           </Typography>
         </div>
         <div className={s.experience_sections}>
