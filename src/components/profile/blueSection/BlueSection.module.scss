@@ -1008,12 +1008,12 @@ $mobile-factor: 0.75;
 
         @include mobileControl(
           (
-            gap: 15px,
+            gap: 45px,
           )
         );
 
         @media (max-width: $mobile-breakpoint) {
-          justify-content: space-between;
+          justify-content: center;
         }
 
         .left {
