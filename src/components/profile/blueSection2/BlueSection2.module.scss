@@ -91,6 +91,7 @@ $mobile-factor: 0.75;
         margin-left: -5px;
         position: absolute;
         top: 31px;
+        z-index: 0;
 
         @include dynamicControl(
           (
