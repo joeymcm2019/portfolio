@@ -66,23 +66,61 @@ $mobile-factor: 0.75;
           )
         );
 
-        filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
+        // filter: drop-shadow(0px 25px 0px rgb(0, 0, 0));
 
-        @media (max-width: $mobile-breakpoint) {
-          filter: drop-shadow(0px 3.5vw 0px rgb(0, 0, 0));
-        }
+        // @media (max-width: $mobile-breakpoint) {
+        //   filter: drop-shadow(0px 3.5vw 0px rgb(0, 0, 0));
+        // }
 
-        @media (min-width: $defaultDSP) and (max-width: $max-width) {
-          filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
-        }
+        // @media (min-width: $defaultDSP) and (max-width: $max-width) {
+        //   filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
+        // }
 
-        @media (min-width: $ultra_wide_break_point) {
-          filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
-        }
+        // @media (min-width: $ultra_wide_break_point) {
+        //   filter: drop-shadow(0px 1.74vw 0px rgb(0, 0, 0));
+        // }
 
         svg {
           width: 100.5%;
           height: auto;
+        }
+      }
+
+      .shadow {
+        width: 100%;
+        position: absolute;
+        top: 31px;
+        margin-left: -5px;
+        z-index: 1;
+
+        @include dynamicControl(
+          (
+            margin-left: -5px,
+            top: 26px,
+          )
+        );
+
+        @include ultraWideControl(
+          (
+            margin-left: -5px,
+            top: 26px,
+          )
+        );
+
+        @include mobileControl(
+          (
+            margin-left: -1px,
+            top: 20px,
+          )
+        );
+
+        svg {
+          width: 100.5%;
+          height: auto;
+
+          path {
+            fill: #000000;
+          }
         }
       }
 

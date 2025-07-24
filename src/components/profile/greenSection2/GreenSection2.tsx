@@ -36,6 +36,9 @@ const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
             <div className={s.blue_background}>
               {isMobile ? <MobileBG /> : <UltraWideBG />}
             </div>
+            <div className={s.shadow}>
+              {isMobile ? <MobileBG /> : <UltraWideBG />}
+            </div>
             <div
               className={classNames(
                 s.gold_line,
