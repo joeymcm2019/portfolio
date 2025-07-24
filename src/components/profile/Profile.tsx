@@ -72,60 +72,69 @@ const Profile = () => {
             My goal is to either become a top UI developer <br /> or a full
             stack developer.
           </Typography>
-          <div className={s.dots}>
-            <DotsSVG />
-          </div>
-          <Typography variant="h2" font="primary" className={s.experience}>
-            Experience
-          </Typography>
-          <div className={s.logos}>
-            <button
-              className={s.infini_button}
-              onClick={() =>
-                window.open("https://www.infinigods.com", "_blank")
-              }
-            >
-              <Image src={infiniLogo} alt="infinilogo" className={s.infini} />
-            </button>
-            <button
-              className={s.infini_button}
-              onClick={() =>
-                window.open("https://www.valhallafoundation.xyz", "_blank")
-              }
-            >
-              <Image
-                src={valhallaLogo}
-                alt="valhallaLogo"
-                className={s.valhalla}
-              />
-            </button>
-          </div>
-          <Typography variant="h4" font="primary" className={s.job_title}>
-            Senior UI Developer
-          </Typography>
-          <Typography
-            variant="h4"
-            font="primary"
-            className={classNames(s.role, s.role1)}
-          >
-            While working for InfiniGods, by far the biggest project I worked on
-            was their Valhalla Foundation site (
-            <a href="https://www.valhallafoundation.xyz" target="_blank">
-              https://www.valhallafoundation.xyz
-            </a>
-            ). I Architected the front-end codebase structure for Valhalla
-            Foundations, and was the primary UI developer for the project. I
-            created and used my own custom scss functions to make all pages and
-            content work for all screen sizes. I implemented the popup
-            component, including functionality for having popups on top of
-            popups {"(used for staking UI)"}, and added a zoom animation to make
-            popups open and close more smoothly. The result was a UI/UX that
-            greatly stood out from competitors and that drew the community in
-            with excitement {"(the site had tens of thousands of users)."}{" "}
-            <a href="/LetterOfRecommendation.pdf" download="LOR_McMahon">
-              Letter of recommendation from InfiniGods&apos; COO (download).
-            </a>
-          </Typography>
+          {showExperience && (
+            <React.Fragment>
+              <div className={s.dots}>
+                <DotsSVG />
+              </div>
+              <Typography variant="h2" font="primary" className={s.experience}>
+                Experience
+              </Typography>
+              <div className={s.logos}>
+                <button
+                  className={s.infini_button}
+                  onClick={() =>
+                    window.open("https://www.infinigods.com", "_blank")
+                  }
+                >
+                  <Image
+                    src={infiniLogo}
+                    alt="infinilogo"
+                    className={s.infini}
+                  />
+                </button>
+                <button
+                  className={s.infini_button}
+                  onClick={() =>
+                    window.open("https://www.valhallafoundation.xyz", "_blank")
+                  }
+                >
+                  <Image
+                    src={valhallaLogo}
+                    alt="valhallaLogo"
+                    className={s.valhalla}
+                  />
+                </button>
+              </div>
+              <Typography variant="h4" font="primary" className={s.job_title}>
+                Senior UI Developer
+              </Typography>
+              <Typography
+                variant="h4"
+                font="primary"
+                className={classNames(s.role, s.role1)}
+              >
+                While working for InfiniGods, by far the biggest project I
+                worked on was their Valhalla Foundation site (
+                <a href="https://www.valhallafoundation.xyz" target="_blank">
+                  https://www.valhallafoundation.xyz
+                </a>
+                ). I Architected the front-end codebase structure for Valhalla
+                Foundations, and was the primary UI developer for the project. I
+                created and used my own custom scss functions to make all pages
+                and content work for all screen sizes. I implemented the popup
+                component, including functionality for having popups on top of
+                popups {"(used for staking UI)"}, and added a zoom animation to
+                make popups open and close more smoothly. The result was a UI/UX
+                that greatly stood out from competitors and that drew the
+                community in with excitement{" "}
+                {"(the site had tens of thousands of users)."}{" "}
+                <a href="/LetterOfRecommendation.pdf" download="LOR_McMahon">
+                  Letter of recommendation from InfiniGods&apos; COO (download).
+                </a>
+              </Typography>
+            </React.Fragment>
+          )}
         </div>
         <div className={s.experience_sections}>
           {/* <div className={s.experience_sections_bg} /> */}
@@ -212,29 +221,36 @@ const Profile = () => {
             </React.Fragment>
           )}
         </div>
-        <div className={s.logos}>
-          <button
-            className={s.infini_button}
-            onClick={() => window.open("https://www.infinigods.com", "_blank")}
-          >
-            <Image src={infiniLogo} alt="infinilogo" className={s.infini} />
-          </button>
-        </div>
-        <Typography
-          variant="h4"
-          font="primary"
-          className={classNames(s.role, s.role2)}
-        >
-          I also did a substantial amount of UI/UX work on InfiniGods&apos;
-          corporate website (
-          <a href="https://www.infinigods.com" target="_blank">
-            https://www.infinigods.com
-          </a>
-          ). I built their webstore UI, their leaderboard UI, their God Vaults
-          UI, and updated the UI on just about every page on their King of
-          Destiny mobile marketplace. I also worked on a couple of pages that
-          never officially got released {"("}Mount Olympus, and Swap{")"}.
-        </Typography>
+        {showExperience && (
+          <React.Fragment>
+            <div className={s.logos}>
+              <button
+                className={s.infini_button}
+                onClick={() =>
+                  window.open("https://www.infinigods.com", "_blank")
+                }
+              >
+                <Image src={infiniLogo} alt="infinilogo" className={s.infini} />
+              </button>
+            </div>
+            <Typography
+              variant="h4"
+              font="primary"
+              className={classNames(s.role, s.role2)}
+            >
+              I also did a substantial amount of UI/UX work on InfiniGods&apos;
+              corporate website (
+              <a href="https://www.infinigods.com" target="_blank">
+                https://www.infinigods.com
+              </a>
+              ). I built their webstore UI, their leaderboard UI, their God
+              Vaults UI, and updated the UI on just about every page on their
+              King of Destiny mobile marketplace. I also worked on a couple of
+              pages that never officially got released {"("}Mount Olympus, and
+              Swap{")"}.
+            </Typography>
+          </React.Fragment>
+        )}
         <div className={s.experience_sections}>
           {showExperience && (
             <React.Fragment>
