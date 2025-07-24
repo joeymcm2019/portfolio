@@ -370,7 +370,7 @@ $ultra_wide_break: 1908px;
 
       line-height: 150% !important;
 
-      font-size: 15.5px;
+      font-size: 19.5px;
 
       @include dynamicControl(
         (
@@ -397,7 +397,7 @@ $ultra_wide_break: 1908px;
           width: 460px,
           margin-top: 20px,
           font-size: 15.5px,
-          margin-bottom: 60px,
+          margin-bottom: 50px,
         ),
         $targetWidth: 532.9px,
         $important: true
@@ -411,11 +411,17 @@ $ultra_wide_break: 1908px;
     .role2 {
       @include mobileControl2(
         (
-          margin-bottom: 10px,
+          margin-bottom: 15px,
         ),
         $important: true,
         $targetWidth: 532.9px
       );
+    }
+
+    .role1 {
+      @media (max-width: 950.98px) and (min-width: 599.9px) {
+        margin-bottom: 25px !important;
+      }
     }
 
     .experience_sections {

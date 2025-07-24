@@ -95,7 +95,11 @@ const Profile = () => {
               />
             </button>
           </div>
-          <Typography variant="h4" font="primary" className={s.role}>
+          <Typography
+            variant="h4"
+            font="primary"
+            className={classNames(s.role, s.role1)}
+          >
             While working for InfiniGods, by far the biggest project I worked on
             was their Valhalla Foundation site (
             <a href="https://www.valhallafoundation.xyz" target="_blank">
