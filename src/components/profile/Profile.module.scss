@@ -362,6 +362,19 @@ $ultra_wide_break: 1908px;
       }
     }
 
+    .job_title {
+      margin-top: 15px;
+
+      @include mobileControl2(
+        (
+          font-size: 15.5px,
+          margin-top: 18px,
+        ),
+        $targetWidth: 532.9px,
+        $important: true
+      );
+    }
+
     .role {
       width: 1000px;
       margin-top: 20px;
@@ -510,6 +523,162 @@ $ultra_wide_break: 1908px;
         ),
         $start-point: $ultra_wide_break
       );
+    }
+
+    .other_experience {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .logo {
+        height: auto;
+
+        @include dynamicControl(
+          (
+            width: 296px,
+          ),
+          $dynamic-start-point: $defaultDSP,
+          $dynamic-end-point: 1300.98px
+        );
+
+        @include ultraWideControl(
+          (
+            width: 296px,
+          ),
+          $start-point: $ultra_wide_break
+        );
+      }
+
+      .title {
+        margin-top: 30px;
+
+        @include dynamicControl(
+          (
+            font-size: 19.5px,
+            margin-top: 30px,
+          ),
+          $dynamic-start-point: $defaultDSP,
+          $dynamic-end-point: 1300.98px
+        );
+
+        @include ultraWideControl(
+          (
+            font-size: 19.5px,
+            margin-top: 18px,
+          ),
+          $start-point: $ultra_wide_break
+        );
+
+        @include mobileControl2(
+          (
+            font-size: 17px,
+            margin-top: 12px,
+          ),
+          $targetWidth: 532px
+        );
+      }
+
+      .info {
+        margin-top: 30px;
+        text-align: left;
+        line-height: 150%;
+
+        @include dynamicControl(
+          (
+            font-size: 19.5px,
+            margin-top: 50px,
+          ),
+          $dynamic-start-point: $defaultDSP,
+          $dynamic-end-point: 1300.98px
+        );
+
+        @include dynamicControl(
+          (
+            font-size: 17.5px,
+            margin-top: 50px,
+          ),
+          $dynamic-start-point: 800px,
+          $dynamic-end-point: $defaultDSP
+        );
+
+        @include dynamicControl(
+          (
+            font-size: 13.5px,
+            margin-top: 39px,
+          ),
+          $dynamic-start-point: 600.98px,
+          $dynamic-end-point: 656.98px
+        );
+
+        @include ultraWideControl(
+          (
+            font-size: 19.5px,
+            margin-top: 30px,
+          ),
+          $start-point: $ultra_wide_break
+        );
+
+        @include mobileControl2(
+          (
+            font-size: 11px,
+            margin-top: 30px,
+          ),
+          $targetWidth: 532px
+        );
+      }
+
+      .furbleImages {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        gap: 5px;
+
+        @media (max-width: 800px) {
+          flex-direction: column;
+        }
+
+        @include ultraWideControl(
+          (
+            margin-top: 50px,
+            gap: 5px,
+          ),
+          $start-point: $ultra_wide_break
+        );
+
+        @include mobileControl2(
+          (
+            margin-top: 30px,
+          ),
+          $max-width: 800.98px
+        );
+
+        img {
+          width: 339px;
+          height: auto;
+
+          @include ultraWideControl(
+            (
+              width: 339px,
+            ),
+            $start-point: $ultra_wide_break
+          );
+
+          @include dynamicControl(
+            (
+              width: 339px,
+            ),
+            $dynamic-end-point: 1135px,
+            $dynamic-start-point: 800px
+          );
+
+          @include mobileControl2(
+            (
+              width: 339px,
+            ),
+            $max-width: 800.98px
+          );
+        }
+      }
     }
   }
 }

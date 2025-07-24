@@ -10,6 +10,11 @@ import Typography from "../typography/Typography";
 import profilePic from "./profile_pic.webp";
 import infiniLogo from "./infinilogo.webp";
 import valhallaLogo from "./valhalla_logo.webp";
+import furbleLogo from "./furble.png";
+import splashScreen from "./splashScreen.webp";
+import feedPic from "./feed.webp";
+import profileImage from "./personalProfile.webp";
+
 import classNames from "classnames";
 
 const BlueSection = dynamic(
@@ -95,6 +100,9 @@ const Profile = () => {
               />
             </button>
           </div>
+          <Typography variant="h4" font="primary" className={s.job_title}>
+            Senior UI Developer
+          </Typography>
           <Typography
             variant="h4"
             font="primary"
@@ -308,6 +316,44 @@ const Profile = () => {
             </React.Fragment>
           )}
         </div>
+        {showExperience && (
+          <div className={s.other_experience}>
+            <Image src={furbleLogo} alt="logo" className={s.logo} />
+            <Typography variant="h3" font="primary" className={s.title}>
+              Application Developer
+            </Typography>
+            <div className={s.furbleImages}>
+              <Image src={splashScreen} alt="Furble Splash Screen" />
+              <Image src={profileImage} alt="Furble Profile Pic" />
+              <Image src={feedPic} alt="Furble Feed" />
+            </div>
+            <Typography variant="h3" font="primary" className={s.info}>
+              • Maintained/improved React Native iOS application Furble,
+              utilizing: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Neo4j, GraphQl, Apollo, Express, Node,
+              GraphQl-Neo4j <br />• Developed user interfaces following figma
+              wire frames. <br />• Implemented new features, improved old ones
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Instant Messaging, Replies to comments,
+              Followers/Following pages <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Selectable photo gallery, uploading
+              media, loading skeletons
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Hashtag and profile mention usability,
+              animations between pages <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Creating/handling notifications,
+              debugging, stabilizing application, etc. <br />• Wrote end to end
+              tests <br />• Followed agile development methodology with Jira
+              ticketing for sprint management <br />• Implemented admin pages
+              for moderating user content <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Used React.js for desktop site, React
+              Native for mobile <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;◇ Results filtering, pagination, Apollo
+              Cache management <br />• Unfortunately, app is not up anymore on
+              iOS or Android
+            </Typography>
+          </div>
+        )}
       </div>
     </div>
   );

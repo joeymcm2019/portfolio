@@ -82,8 +82,13 @@ $mobile-breakpoint: 1033.98px;
   }
 }
 
-@mixin mobileControl2($properties, $important: false, $targetWidth: 600px) {
-  @media (max-width: 600.98px) {
+@mixin mobileControl2(
+  $properties,
+  $important: false,
+  $targetWidth: 600px,
+  $max-width: 600.98px
+) {
+  @media (max-width: $max-width) {
     @each $property, $value in $properties {
       $vwValue: round((($value * 100vw / $targetWidth) * 100)) / 100;
 
