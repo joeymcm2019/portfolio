@@ -17,30 +17,6 @@ $mobile-factor: 0.75;
     .blue_container {
       width: 100%;
       position: relative;
-      .video_container_inactive {
-        content: "";
-        position: fixed;
-        width: 0vw;
-        height: 0vh;
-        top: 0px;
-        z-index: 3;
-        background-color: rgba(26, 26, 26, 0.95);
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out, width 0.5s ease-in-out 1.5s,
-          height 0.5s ease-in-out 1.5s;
-      }
-
-      .video_container_active {
-        content: "";
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 0px;
-        z-index: 3;
-        background-color: rgba(26, 26, 26, 0.95);
-        opacity: 1;
-        transition: opacity 0.5s ease-in-out;
-      }
 
       .blue_background {
         position: relative;
@@ -92,6 +68,7 @@ $mobile-factor: 0.75;
         position: absolute;
         top: 31px;
         margin-left: -5px;
+        z-index: 0;
 
         @include dynamicControl(
           (
