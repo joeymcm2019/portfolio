@@ -40,6 +40,150 @@ $ultra_wide_break: 1908px;
     border-bottom: 0.21vw solid #fff;
   }
 
+  .outer {
+    width: 100%;
+  }
+
+  .buttons_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include ultraWideControl(
+      (
+        padding-left: 30px,
+        padding-right: 30px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
+    @include dynamicControl(
+      (
+        padding-left: 30px,
+        padding-right: 30px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px
+    );
+
+    @include mobileControl2(
+      (
+        padding-left: 18px,
+        padding-right: 18px,
+      ),
+      $max-width: 500.98px,
+      $targetWidth: 500.98px
+    );
+  }
+
+  .left_link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    z-index: 5;
+
+    h2 {
+      color: white;
+      @include ultraWideControl(
+        (
+          font-size: 28px,
+        ),
+        $start-point: $ultra_wide_break
+      );
+
+      @include dynamicControl(
+        (
+          font-size: 28px,
+        ),
+        $dynamic-start-point: $defaultDSP,
+        $dynamic-end-point: 1545.98px
+      );
+
+      @include mobileControl2(
+        (
+          font-size: 18.73px,
+        ),
+        $max-width: 500.98px,
+        $targetWidth: 500.98px
+      );
+
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+      @media (min-width: 600.98px) {
+        &:hover {
+          transform: scale(1.05);
+        }
+        &:active {
+          opacity: 0.8;
+        }
+      }
+
+      @media (max-width: 600.98px) {
+        &:active {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .right_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    z-index: 5;
+
+    width: 45px;
+    height: 45px;
+
+    @include ultraWideControl(
+      (
+        width: 45px,
+        height: 45px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
+    @include dynamicControl(
+      (
+        width: 45px,
+        height: 45px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1400.98px
+    );
+
+    @media (max-width: 600.98px) {
+      width: 33px;
+      height: 33px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      @media (min-width: 600.98px) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    cursor: pointer;
+  }
+
   .circle {
     width: 286px;
     height: 286px;
@@ -112,5 +256,9 @@ $ultra_wide_break: 1908px;
       ),
       $start-point: $ultra_wide_break
     );
+
+    @media (max-width: 600.98px) {
+      width: 190px;
+    }
   }
 }
