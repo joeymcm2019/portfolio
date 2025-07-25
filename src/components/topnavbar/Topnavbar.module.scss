@@ -90,6 +90,7 @@ $ultra_wide_break: 1908px;
     justify-content: center;
     border: none;
     background-color: transparent;
+    user-select: none;
     z-index: 5;
 
     h2 {
@@ -141,6 +142,7 @@ $ultra_wide_break: 1908px;
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    user-select: none;
     border: none;
     z-index: 5;
 
@@ -172,10 +174,20 @@ $ultra_wide_break: 1908px;
     img {
       width: 100%;
       height: auto;
-      transition: transform 0.3s ease-in-out;
+      user-select: none;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
       @media (min-width: 600.98px) {
         &:hover {
+          transform: scale(1.05);
+        }
+        &:active {
+          opacity: 0.8;
+        }
+      }
+
+      @media (max-width: 600.98px) {
+        &:active {
           transform: scale(1.05);
         }
       }
