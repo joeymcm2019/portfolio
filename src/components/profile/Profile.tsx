@@ -21,28 +21,28 @@ const BlueSection = dynamic(
   () => import("@/components/profile/blueSection/BlueSection"),
   {
     ssr: false,
-  }
+  },
 );
 
 const BlueSection2 = dynamic(
   () => import("@/components/profile/blueSection2/BlueSection2"),
   {
     ssr: false,
-  }
+  },
 );
 
 const GreenSection = dynamic(
   () => import("@/components/profile/greenSection/GreenSection"),
   {
     ssr: false,
-  }
+  },
 );
 
 const GreenSection2 = dynamic(
   () => import("@/components/profile/greenSection2/GreenSection2"),
   {
     ssr: false,
-  }
+  },
 );
 
 const Profile = () => {
@@ -66,12 +66,12 @@ const Profile = () => {
         </Typography>
         <div className={s.intro_text}>
           <Typography variant="h4" font="primary" className={s.intro}>
-            One thing to know about me:
+            I enjoy full stack development along with building pixel perfect
+            dynamic UI/UX experiences. <br /> I enjoy the challenge of
+            engineering solutions for complex web problems across both business
+            logic and UI/UX.
           </Typography>
-          <Typography variant="h4" font="primary" className={s.goal}>
-            My goal is to either become a top UI developer <br /> or a full
-            stack developer.
-          </Typography>
+
           {showExperience && (
             <React.Fragment>
               <div className={s.dots}>

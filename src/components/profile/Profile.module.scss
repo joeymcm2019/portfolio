@@ -100,6 +100,7 @@ $ultra_wide_break: 1908px;
 
       .intro {
         margin-top: 30px;
+        text-align: center;
 
         @include dynamicControl(
           (
@@ -283,7 +284,9 @@ $ultra_wide_break: 1908px;
 
         cursor: pointer;
 
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition:
+          transform 0.3s ease-in-out,
+          opacity 0.3s ease-in-out;
 
         @media (min-width: $targetViewWidth) {
           &:hover {
