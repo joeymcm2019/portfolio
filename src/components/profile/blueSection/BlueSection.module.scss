@@ -101,6 +101,44 @@ $mobile-factor: 0.75;
         }
       }
 
+      .gold_upper {
+        width: 100%;
+        margin-left: -5px;
+        position: absolute;
+        top: -2px;
+        z-index: 0;
+
+        @include dynamicControl(
+          (
+            margin-left: -4px,
+            top: -2px,
+          )
+        );
+
+        @include ultraWideControl(
+          (
+            margin-left: -4px,
+            top: -2px,
+          )
+        );
+
+        // @include mobileControl(
+        //   (
+        //     margin-left: 0px,
+        //     top: 25px,
+        //   )
+        // );
+
+        svg {
+          width: 100.5%;
+          height: auto;
+        }
+      }
+
+      .gold_upper_active {
+        animation: horizontal_reveal 3s ease-in;
+      }
+
       .gold_line {
         width: 100%;
         position: absolute;
@@ -296,11 +334,16 @@ $mobile-factor: 0.75;
                 )
               );
 
-              transition: top 0.35s ease-in-out, left 0.35s ease-in-out,
-                z-index 0s 0.35s, opacity 0.35s ease-in-out;
+              transition:
+                top 0.35s ease-in-out,
+                left 0.35s ease-in-out,
+                z-index 0s 0.35s,
+                opacity 0.35s ease-in-out;
 
               iframe {
-                transition: width 0.35s, height 0.35s;
+                transition:
+                  width 0.35s,
+                  height 0.35s;
               }
             }
 
@@ -343,7 +386,9 @@ $mobile-factor: 0.75;
               iframe {
                 width: 650 * 0.9 * 0.97px;
                 height: 365 * 0.9 * 0.97px;
-                transition: width 0.35s, height 0.35s;
+                transition:
+                  width 0.35s,
+                  height 0.35s;
 
                 @include dynamicControl(
                   (
@@ -367,8 +412,11 @@ $mobile-factor: 0.75;
                 );
               }
 
-              transition: top 0.35s ease-in-out, left 0.35s ease-in-out,
-                z-index 0s 0.35s, opacity 0.35s ease-in-out;
+              transition:
+                top 0.35s ease-in-out,
+                left 0.35s ease-in-out,
+                z-index 0s 0.35s,
+                opacity 0.35s ease-in-out;
             }
 
             .front_video_midpoint {
@@ -402,7 +450,9 @@ $mobile-factor: 0.75;
               iframe {
                 width: 576px;
                 height: 324px;
-                transition: width 0.15s, height 0.15s;
+                transition:
+                  width 0.15s,
+                  height 0.15s;
 
                 @include dynamicControl(
                   (
@@ -426,8 +476,11 @@ $mobile-factor: 0.75;
                 );
               }
 
-              transition: top 0.15s ease-in, left 0.15s ease-in,
-                z-index 0s 0.15s, opacity 0.15s ease-in-out;
+              transition:
+                top 0.15s ease-in,
+                left 0.15s ease-in,
+                z-index 0s 0.15s,
+                opacity 0.15s ease-in-out;
             }
 
             .back_video_midpoint {
@@ -461,7 +514,9 @@ $mobile-factor: 0.75;
               iframe {
                 width: 576px;
                 height: 324px;
-                transition: width 0.175s, height 0.175s;
+                transition:
+                  width 0.175s,
+                  height 0.175s;
 
                 @include dynamicControl(
                   (
@@ -485,8 +540,11 @@ $mobile-factor: 0.75;
                 );
               }
 
-              transition: top 0.175s ease-in, left 0.175s ease-in,
-                z-index 0s 0.175s, opacity 0.175s ease-in-out;
+              transition:
+                top 0.175s ease-in,
+                left 0.175s ease-in,
+                z-index 0s 0.175s,
+                opacity 0.175s ease-in-out;
             }
           }
 
@@ -926,7 +984,9 @@ $mobile-factor: 0.75;
                 );
               }
 
-              transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+              transition:
+                transform 0.3s ease-in-out,
+                opacity 0.3s ease-in-out;
 
               @media (max-width: $mobile-breakpoint) {
                 &:active {

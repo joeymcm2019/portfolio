@@ -52,16 +52,24 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
             <div
               className={classNames(
                 s.gold_line,
-                animationStarted && s.gold_line_active
+                animationStarted && s.gold_line_active,
               )}
             >
               {isMobile ? <MobileGold /> : <GoldLineUW />}
+            </div>
+            <div
+              className={classNames(
+                s.gold_upper,
+                animationStarted && s.gold_upper_active,
+              )}
+            >
+              {isMobile ? null : <GoldUpperUW />}
             </div>
 
             <div
               className={classNames(
                 s.video_and_text,
-                sectionNumber === 1 && s.video_and_text_adjust
+                sectionNumber === 1 && s.video_and_text_adjust,
               )}
             >
               <div className={s.left}>
@@ -76,7 +84,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                           s.front_video_midpoint,
                         startSwapAnimation &&
                           toggle === 0 &&
-                          s.back_video_midpoint
+                          s.back_video_midpoint,
                       )}
                     >
                       <ReactPlayer
@@ -95,7 +103,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                           s.back_video_midpoint,
                         startSwapAnimation &&
                           toggle === 0 &&
-                          s.front_video_midpoint
+                          s.front_video_midpoint,
                       )}
                     >
                       <ReactPlayer
@@ -177,7 +185,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                         </a>
                       ) : (
                         <p key={index}>{line}</p>
-                      )
+                      ),
                     )}
                   </Typography>
                 </div>
@@ -205,6 +213,39 @@ const UltraWideBG = () => {
         d="M0.657988 2.44807C0.691078 62.7085 29.0697 187.569 90.4185 186.517C167.149 185.201 933.124 186.517 946.125 186.517C956.526 186.517 980.176 199.982 990.701 206.715H1800.49C1800.49 206.715 1916.66 202.981 1916.66 259.034V810.667H1049.46L946.125 841.564H90.4185C11.0017 841.564 0.657959 972.146 0.657959 1037.98V2.34261C0.65797 0.464376 0.657979 0.553176 0.657988 2.44807Z"
         fill="#00213A"
       />
+    </svg>
+  );
+};
+
+const GoldUpperUW = () => {
+  return (
+    <svg
+      width="1916"
+      height="1037"
+      viewBox="0 0 1916 1037"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.89723e-05 1.46858C0.0331189 61.729 28.4118 186.589 89.7605 185.537C166.491 184.222 932.466 185.537 945.468 185.537C955.869 185.537 979.518 199.003 990.043 205.736H1799.84C1799.84 205.736 1916 202.002 1916 258.054V809.688H1048.8L945.468 840.585H89.7605C10.3437 840.585 0 971.166 0 1037V1.36312C1.06564e-05 -0.515116 2.02899e-05 -0.426316 2.89723e-05 1.46858Z"
+        fill="url(#paint0_linear_672_33)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_672_33"
+          x1="111.725"
+          y1="1040.31"
+          x2="1810.83"
+          y2="1040.31"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.173077" stop-color="#7D6629" stop-opacity="0" />
+          <stop offset="0.394231" stop-color="#E9BB45" />
+          <stop offset="0.596154" stop-color="#7D6629" />
+          <stop offset="0.798077" stop-color="#E9BB45" />
+          <stop offset="1" stop-color="#7D6629" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };

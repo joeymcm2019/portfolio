@@ -138,6 +138,44 @@ $mobile-factor: 0.75;
         animation: horizontal_reveal 3s ease-in;
       }
 
+      .gold_upper {
+        width: 100%;
+        margin-left: -5px;
+        position: absolute;
+        top: -2px;
+        z-index: 0;
+
+        @include dynamicControl(
+          (
+            margin-left: -6px,
+            top: -2px,
+          )
+        );
+
+        @include ultraWideControl(
+          (
+            margin-left: -6px,
+            top: -2px,
+          )
+        );
+
+        // @include mobileControl(
+        //   (
+        //     margin-left: 0px,
+        //     top: 25px,
+        //   )
+        // );
+
+        svg {
+          width: 100.5%;
+          height: auto;
+        }
+      }
+
+      .gold_upper_active {
+        animation: horizontal_reveal 3s ease-in;
+      }
+
       .video_and_text {
         z-index: 3;
         display: flex;
@@ -432,7 +470,9 @@ $mobile-factor: 0.75;
                 );
               }
 
-              transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+              transition:
+                transform 0.3s ease-in-out,
+                opacity 0.3s ease-in-out;
 
               &:hover {
                 transform: scale(0.96);

@@ -42,10 +42,18 @@ const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
             <div
               className={classNames(
                 s.gold_line,
-                animationStarted && s.gold_line_active
+                animationStarted && s.gold_line_active,
               )}
             >
               {isMobile ? <GoldMobile /> : <GoldLineUW />}
+            </div>
+            <div
+              className={classNames(
+                s.gold_upper,
+                animationStarted && s.gold_upper_active,
+              )}
+            >
+              {isMobile ? null : <GoldUpperUW />}
             </div>
 
             <div className={s.video_and_text}>
@@ -83,7 +91,7 @@ const GreenSection2 = ({ title, text, link, sectionNumber }: Props) => {
                         </a>
                       ) : (
                         <p key={index}>{line}</p>
-                      )
+                      ),
                     )}
                   </Typography>
                 </div>
@@ -121,6 +129,39 @@ const UltraWideBG = () => {
         d="M1915.95 10.3874C1915.98 -1.85383 1916 -3.75805 1916 7.261C1916 8.30478 1915.98 9.3472 1915.95 10.3874C1915.75 86.9917 1915.01 568.406 1915.01 820.879H969.917L926.859 805.906H91.6317C33.0082 810.551 0.0606939 877.403 0.0210877 921.33C-0.0269021 974.553 0.0220239 214.434 0.0220535 213.974H108.98L144.262 202.623H602.94L631.166 213.974H789.939L969.917 157.137H1715.63C1814.2 157.137 1913.38 89.0504 1915.95 10.3874Z"
         fill="#023A00"
       />
+    </svg>
+  );
+};
+
+const GoldUpperUW = () => {
+  return (
+    <svg
+      width="1916"
+      height="924"
+      viewBox="0 0 1916 924"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1915.95 10.3874C1915.98 -1.85383 1916 -3.75805 1916 7.261C1916 8.30478 1915.98 9.3472 1915.95 10.3874C1915.75 86.9917 1915.01 568.406 1915.01 820.879H969.917L926.859 805.906H91.6317C33.0082 810.551 0.0606939 877.403 0.0210877 921.33C-0.0269021 974.553 0.0220239 214.434 0.0220535 213.974H108.98L144.262 202.623H602.94L631.166 213.974H789.939L969.917 157.137H1715.63C1814.2 157.137 1913.38 89.0504 1915.95 10.3874Z"
+        fill="url(#paint0_linear_672_31)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_672_31"
+          x1="111.725"
+          y1="924"
+          x2="1810.83"
+          y2="924"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#7D6629" />
+          <stop offset="0.221154" stop-color="#E9BB45" />
+          <stop offset="0.389423" stop-color="#7D6629" />
+          <stop offset="0.581731" stop-color="#E9BB45" />
+          <stop offset="0.730769" stop-color="#003B06" stop-opacity="0" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
