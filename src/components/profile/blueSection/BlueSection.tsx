@@ -10,6 +10,7 @@ import { DirectionalFade } from "@/components/animation/DirectionalFade";
 
 import infiniLogo from "../infinigods.webp";
 import vhLogo from "../valhalla_logo.webp";
+import cavesLogo from "../CAVES-FINAL.png";
 import classNames from "classnames";
 
 type Props = {
@@ -28,6 +29,8 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
   const youtubeUrls = [
     "https://www.youtube.com/watch?v=efC96PHp47U",
     "https://www.youtube.com/watch?v=P9HnWoBn0Uc",
+    "https://www.youtube.com/watch?v=q9lydyjFJho",
+    "https://www.youtube.com/watch?v=0cX-Oj7boNs",
   ];
 
   useEffect(() => {
@@ -153,21 +156,31 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
               </div>
 
               <div className={s.right}>
-                <div className={s.top}>
-                  <button onClick={() => window.open(link, "_blank")}>
+                <div
+                  className={classNames(s.top, sectionNumber > 4 ? s.top2 : "")}
+                >
+                  <button
+                    onClick={() => {
+                      if (link) {
+                        window.open(link, "_blank");
+                      }
+                    }}
+                  >
                     <Image
-                      src={infiniLogo}
+                      src={sectionNumber > 3 ? cavesLogo : infiniLogo}
                       alt="infinilogo"
-                      className={s.infini}
+                      className={sectionNumber > 3 ? s.caves : s.infini}
                     />
-                    <Image
-                      src={vhLogo}
-                      alt="valhalla logo"
-                      className={s.valhalla}
-                    />
+                    {sectionNumber <= 3 && (
+                      <Image
+                        src={vhLogo}
+                        alt="valhalla logo"
+                        className={s.valhalla}
+                      />
+                    )}
                     <Typography
                       variant="h2"
-                      font="tertiary"
+                      font={sectionNumber > 3 ? "fifth" : "tertiary"}
                       className={s.title}
                     >
                       {title}

@@ -7,7 +7,7 @@ type Props = {
   variant: "h1Large" | "h1" | "h2" | "h3" | "h4" | "h5";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any;
-  font: "primary" | "secondary" | "tertiary" | "fourth";
+  font: "primary" | "secondary" | "tertiary" | "fourth" | "fifth";
   className?: string;
 };
 
@@ -27,6 +27,8 @@ const Typography = ({
         return s.tertiary_font;
       case "fourth":
         return s.fourth_font;
+      case "fifth":
+        return s.fifth_font;
       default:
         return s.primary_font;
     }

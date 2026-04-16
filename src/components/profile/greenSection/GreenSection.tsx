@@ -10,6 +10,7 @@ import { DirectionalFade } from "@/components/animation/DirectionalFade";
 
 import infiniLogo from "../infinigods.webp";
 import vhLogo from "../valhalla_logo.webp";
+import cavesLogo from "../CAVES-FINAL.png";
 import classNames from "classnames";
 
 type Props = {
@@ -27,6 +28,7 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
     "https://www.youtube.com/watch?v=BGaHxgRMxXU",
     "https://www.youtube.com/watch?v=1lOWRM9vcNY",
     "https://www.youtube.com/watch?v=yZuaAxJMrms",
+    "https://www.youtube.com/watch?v=qFC7FRW6BLI",
   ];
 
   return (
@@ -62,18 +64,20 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
                 <div className={s.top}>
                   <button onClick={() => window.open(link, "_blank")}>
                     <Image
-                      src={infiniLogo}
+                      src={sectionNumber > 3 ? cavesLogo : infiniLogo}
                       alt="infinilogo"
-                      className={s.infini}
+                      className={sectionNumber > 3 ? s.caves : s.infini}
                     />
-                    <Image
-                      src={vhLogo}
-                      alt="valhalla logo"
-                      className={s.valhalla}
-                    />
+                    {sectionNumber <= 3 && (
+                      <Image
+                        src={vhLogo}
+                        alt="valhalla logo"
+                        className={s.valhalla}
+                      />
+                    )}
                     <Typography
                       variant="h2"
-                      font="tertiary"
+                      font={sectionNumber > 3 ? "fifth" : "tertiary"}
                       className={s.title}
                     >
                       {title}

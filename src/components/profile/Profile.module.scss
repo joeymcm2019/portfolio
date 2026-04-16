@@ -333,6 +333,38 @@ $ultra_wide_break: 1908px;
           );
         }
 
+        .caves {
+          width: 290px;
+          height: auto;
+          user-select: none;
+          margin-bottom: 25px;
+
+          @include dynamicControl(
+            (
+              width: 290px,
+              margin-bottom: 25px,
+            ),
+            $dynamic-start-point: $defaultDSP,
+            $dynamic-end-point: 1300.98px
+          );
+
+          @include ultraWideControl(
+            (
+              width: 290px,
+              margin-bottom: 25px,
+            ),
+            $start-point: $ultra_wide_break
+          );
+
+          @include mobileControl2(
+            (
+              width: 200px,
+              margin-bottom: 25px,
+            ),
+            $targetWidth: 532px
+          );
+        }
+
         .valhalla {
           width: 261px;
           height: 94px;
@@ -363,6 +395,10 @@ $ultra_wide_break: 1908px;
           );
         }
       }
+    }
+
+    .logos2 {
+      margin-top: 0px;
     }
 
     .job_title {
@@ -452,6 +488,16 @@ $ultra_wide_break: 1908px;
         (
           margin-top: -50px,
           padding-bottom: 100px,
+        )
+      );
+    }
+
+    .experience_sections2 {
+      padding-bottom: 25px;
+
+      @include dynamicControl(
+        (
+          padding-bottom: 25px,
         )
       );
     }

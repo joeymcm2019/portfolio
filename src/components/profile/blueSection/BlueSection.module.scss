@@ -935,6 +935,30 @@ $mobile-factor: 0.75;
                 );
               }
 
+              .caves {
+                width: 250 * 0.8px;
+                height: auto;
+
+                @include dynamicControl(
+                  (
+                    width: 250 * 0.8px,
+                    height: auto,
+                  )
+                );
+
+                @include ultraWideControl(
+                  (
+                    width: 250 * 0.8px,
+                  )
+                );
+
+                @include mobileControl(
+                  (
+                    width: 250px * $mobile-factor-right,
+                  )
+                );
+              }
+
               .valhalla {
                 width: 232 * 0.8px;
                 height: 83 * 0.8px;
@@ -1001,6 +1025,18 @@ $mobile-factor: 0.75;
                 &:active {
                   opacity: 0.8;
                 }
+              }
+            }
+          }
+
+          .top2 {
+            button {
+              cursor: default;
+              &:hover {
+                transform: none;
+              }
+              &:active {
+                opacity: 1;
               }
             }
           }

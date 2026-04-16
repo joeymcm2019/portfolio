@@ -9,6 +9,7 @@ import Typography from "../typography/Typography";
 
 import profilePic from "./profile_pic.webp";
 import infiniLogo from "./infinilogo.webp";
+import cavesLogo from "./CAVES-FINAL.png";
 import valhallaLogo from "./valhalla_logo.webp";
 import furbleLogo from "./furble.png";
 import splashScreen from "./splashScreen.webp";
@@ -81,6 +82,83 @@ const Profile = () => {
                 Experience
               </Typography>
               <div className={s.logos}>
+                <button
+                  className={s.infini_button}
+                  onClick={() =>
+                    window.open("https://caves.wolf.game/", "_blank")
+                  }
+                >
+                  <Image src={cavesLogo} alt="caveslogo" className={s.caves} />
+                </button>
+              </div>
+              <Typography variant="h4" font="primary" className={s.job_title}>
+                Full Stack Developer, Gaming Engineer
+              </Typography>
+              <Typography
+                variant="h4"
+                font="primary"
+                className={classNames(s.role, s.role1)}
+              >
+                Brought on for UI development and expanded into full-stack
+                gameplay engineering, owning competitive systems, game state
+                stability, admin tooling, and production reliability during live
+                launch. Architected and delivered a configurable leaderboard
+                epoch and reward system. Owned design and implementation of
+                major UI systems including animated reward modals, treasure set
+                celebrations, rarity styling, slot-machine purchase flows,
+                mobile responsiveness, and animated gradient effects for
+                highlighting major achievements. Also stabilized core game state
+                machine.
+              </Typography>
+            </React.Fragment>
+          )}
+
+          <div
+            className={classNames(
+              s.experience_sections,
+              s.experience_sections2,
+            )}
+          >
+            {/* <div className={s.experience_sections_bg} /> */}
+            {showExperience && (
+              <React.Fragment>
+                <BlueSection
+                  title="Game UI"
+                  link="https://caves.wolf.game/"
+                  text={`
+            • Created and integrated key reward modals from scratch.\n
+            • Implemented reward timers and proper scoring for mythic A8 Skull.\n
+            • Updated character animations with new sprite sheets.\n
+            • Engineered slot machine animation system for shop.\n
+            • Polished Game Panels.\n`}
+                  sectionNumber={4}
+                />
+
+                <GreenSection
+                  title="Home Page UI"
+                  link="https://caves.wolf.game/"
+                  text={`• Fully polished home page UI, including panels and modals.\n
+                • Created Caves Paper from scratch, including text content.\n
+                • Made entire site mobile friendly and ready for launch.`}
+                  sectionNumber={4}
+                />
+                <div className={s.blue_gap}>
+                  <BlueSection
+                    title="Admin Dashboard"
+                    link=""
+                    text={`• Fullstack implementation of admin dashboard, including backend API endpoints and frontend UI.\n
+                • Engineered epoch management system for displaying and sending out rewards.\n
+                • Built credit reward system for sending out credits to specific wallets.`}
+                    sectionNumber={5}
+                  />
+                </div>
+              </React.Fragment>
+            )}
+          </div>
+
+          {showExperience && (
+            <React.Fragment>
+              <div className={classNames(s.logos, s.logos2)}>
                 <button
                   className={s.infini_button}
                   onClick={() =>
