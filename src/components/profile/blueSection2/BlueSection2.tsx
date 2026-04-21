@@ -239,11 +239,11 @@ const GoldUpperUW = () => {
           y2="1040.31"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.173077" stop-color="#7D6629" stop-opacity="0" />
-          <stop offset="0.394231" stop-color="#E9BB45" />
-          <stop offset="0.596154" stop-color="#7D6629" />
-          <stop offset="0.798077" stop-color="#E9BB45" />
-          <stop offset="1" stop-color="#7D6629" />
+          <stop offset="0.173077" stopColor="#7D6629" stopOpacity="0" />
+          <stop offset="0.394231" stopColor="#E9BB45" />
+          <stop offset="0.596154" stopColor="#7D6629" />
+          <stop offset="0.798077" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
     </svg>
@@ -272,11 +272,11 @@ const GoldLineUW = () => {
           y2="1040.31"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7D6629" />
-          <stop offset="0.15" stop-color="#E9BB45" />
-          <stop offset="0.5" stop-color="#7D6629" />
-          <stop offset="0.85" stop-color="#E9BB45" />
-          <stop offset="1" stop-color="#7D6629" />
+          <stop stopColor="#7D6629" />
+          <stop offset="0.15" stopColor="#E9BB45" />
+          <stop offset="0.5" stopColor="#7D6629" />
+          <stop offset="0.85" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
     </svg>
@@ -322,11 +322,11 @@ const MobileGold = () => {
           y2="1462.48"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7D6629" />
-          <stop offset="0.15" stop-color="#E9BB45" />
-          <stop offset="0.5" stop-color="#7D6629" />
-          <stop offset="0.85" stop-color="#E9BB45" />
-          <stop offset="1" stop-color="#7D6629" />
+          <stop stopColor="#7D6629" />
+          <stop offset="0.15" stopColor="#E9BB45" />
+          <stop offset="0.5" stopColor="#7D6629" />
+          <stop offset="0.85" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
     </svg>

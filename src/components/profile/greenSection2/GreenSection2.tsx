@@ -155,11 +155,11 @@ const GoldUpperUW = () => {
           y2="924"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7D6629" />
-          <stop offset="0.221154" stop-color="#E9BB45" />
-          <stop offset="0.389423" stop-color="#7D6629" />
-          <stop offset="0.581731" stop-color="#E9BB45" />
-          <stop offset="0.730769" stop-color="#003B06" stop-opacity="0" />
+          <stop stopColor="#7D6629" />
+          <stop offset="0.221154" stopColor="#E9BB45" />
+          <stop offset="0.389423" stopColor="#7D6629" />
+          <stop offset="0.581731" stopColor="#E9BB45" />
+          <stop offset="0.730769" stopColor="#003B06" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
@@ -188,11 +188,11 @@ const GoldLineUW = () => {
           y2="924"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7D6629" />
-          <stop offset="0.15" stop-color="#E9BB45" />
-          <stop offset="0.5" stop-color="#7D6629" />
-          <stop offset="0.85" stop-color="#E9BB45" />
-          <stop offset="1" stop-color="#7D6629" />
+          <stop stopColor="#7D6629" />
+          <stop offset="0.15" stopColor="#E9BB45" />
+          <stop offset="0.5" stopColor="#7D6629" />
+          <stop offset="0.85" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
     </svg>
@@ -221,11 +221,11 @@ const GoldMobile = () => {
           y2="1461.67"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7D6629" />
-          <stop offset="0.15" stop-color="#E9BB45" />
-          <stop offset="0.5" stop-color="#7D6629" />
-          <stop offset="0.85" stop-color="#E9BB45" />
-          <stop offset="1" stop-color="#7D6629" />
+          <stop stopColor="#7D6629" />
+          <stop offset="0.15" stopColor="#E9BB45" />
+          <stop offset="0.5" stopColor="#7D6629" />
+          <stop offset="0.85" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
     </svg>

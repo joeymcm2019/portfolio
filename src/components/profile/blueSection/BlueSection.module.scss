@@ -942,7 +942,6 @@ $mobile-factor: 0.75;
                 @include dynamicControl(
                   (
                     width: 250 * 0.8px,
-                    height: auto,
                   )
                 );
 

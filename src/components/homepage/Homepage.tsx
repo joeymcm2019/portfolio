@@ -25,7 +25,7 @@ const Homepage = () => {
         <TopNavBar />
       </div>
       <DirectionalFade delay={0.7} right className={s.logo} duration={0.4}>
-        <Image src={logo} alt="logo" />
+        <Image src={logo} alt="logo" loading="eager" />
       </DirectionalFade>
       <div className={s.content}>
         <div className={s.lines}>
@@ -50,7 +50,12 @@ const Homepage = () => {
           </Typography>
         </DirectionalFade>
         <DirectionalFade delay={3} up>
-          <Image src={mountain} alt="mountain" className={s.mountain} />
+          <Image
+            src={mountain}
+            alt="mountain"
+            className={s.mountain}
+            loading="eager"
+          />
         </DirectionalFade>
         <Profile />
       </div>

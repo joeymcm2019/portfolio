@@ -35,7 +35,10 @@ $mobile-breakpoint: 1033.98px;
 ) {
   @media (max-width: $dynamic-end-point) and (min-width: $dynamic-start-point) {
     @each $property, $value in $properties {
-      $vwValue: round((($value * 100vw / $dynamic-end-point) * 100)) / 100;
+      $vwValue: math.div(
+        math.round((($value * 100vw / $dynamic-end-point) * 100)),
+        100
+      );
 
       @if $important {
         #{$property}: $vwValue !important;
@@ -49,12 +52,12 @@ $mobile-breakpoint: 1033.98px;
     @media (max-width: $dynamic-start-point) {
       @each $property, $value in $properties {
         @if $important {
-          #{$property}: round(
+          #{$property}: math.round(
               (($value * $dynamic-start-point) / $dynamic-end-point) * 100
             ) /
             100 !important;
         } @else {
-          #{$property}: round(
+          #{$property}: math.round(
               (($value * $dynamic-start-point) / $dynamic-end-point) * 100
             ) /
             100;
@@ -71,7 +74,10 @@ $mobile-breakpoint: 1033.98px;
 ) {
   @media (max-width: $mobile-breakpoint) {
     @each $property, $value in $properties {
-      $vwValue: round((($value * 100vw / $targetWidth) * 100)) / 100;
+      $vwValue: math.div(
+        math.round((($value * 100vw / $targetWidth) * 100)),
+        100
+      );
 
       @if $important {
         #{$property}: $vwValue !important;
@@ -90,7 +96,10 @@ $mobile-breakpoint: 1033.98px;
 ) {
   @media (max-width: $max-width) {
     @each $property, $value in $properties {
-      $vwValue: round((($value * 100vw / $targetWidth) * 100)) / 100;
+      $vwValue: math.div(
+        math.round((($value * 100vw / $targetWidth) * 100)),
+        100
+      );
 
       @if $important {
         #{$property}: $vwValue !important;
