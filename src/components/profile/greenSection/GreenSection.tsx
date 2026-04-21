@@ -56,7 +56,7 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_upper_active,
               )}
             >
-              {isMobile ? null : <GoldUpperUW />}
+              {isMobile ? <GoldUpperMobile /> : <GoldUpperUW />}
             </div>
 
             <div className={s.video_and_text}>
@@ -166,6 +166,39 @@ const GoldUpperUW = () => {
           <stop offset="0.389423" stopColor="#7D6629" />
           <stop offset="0.581731" stopColor="#E9BB45" />
           <stop offset="0.730769" stopColor="#003B06" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+const GoldUpperMobile = () => {
+  return (
+    <svg
+      width="1033"
+      height="1462"
+      viewBox="0 0 1033 1462"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1033 0C1032.93 45.8475 1032.77 194.507 1032.64 387.214C1032.59 494.927 1032.63 1263.03 1032.64 1370.18L923.024 1402H49.5989C18.0095 1406.64 0.255608 1417.09 0.234266 1461C0.22082 1488.66 0.0377721 656.109 0.00586631 442.889H6.93961e-06C0.000391912 425.997 0.000578319 408.823 0.000983502 391.634C0.000887934 387.161 -9.14801e-05 382.757 6.93961e-06 378.427H0.00196006C0.00514775 244.162 0.00781362 113.157 0.00781944 112.989H58.7535L77.7765 101.642H325.077L340.295 112.989H425.9L522.937 96.131H924.994C978.142 96.131 1031.61 78.6389 1033 0Z"
+        fill="url(#paint0_linear_676_5)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_676_5"
+          x1="60.236"
+          y1="1461.67"
+          x2="976.3"
+          y2="1461.67"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#7D6629" />
+          <stop offset="0.15" stopColor="#E9BB45" />
+          <stop offset="0.4" stopColor="#7D6629" />
+          <stop offset="0.64" stopColor="#E9BB45" />
+          <stop offset="0.83" stopColor="#7D6629" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

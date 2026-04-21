@@ -159,12 +159,12 @@ $mobile-factor: 0.75;
           )
         );
 
-        // @include mobileControl(
-        //   (
-        //     margin-left: 0px,
-        //     top: 25px,
-        //   )
-        // );
+        @include mobileControl(
+          (
+            margin-left: 0px,
+            top: -3px,
+          )
+        );
 
         svg {
           width: 100.5%;

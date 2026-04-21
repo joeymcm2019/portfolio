@@ -63,7 +63,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_upper_active,
               )}
             >
-              {isMobile ? null : <GoldUpperUW />}
+              {isMobile ? <GoldUpperMobile /> : <GoldUpperUW />}
             </div>
 
             <div
@@ -243,6 +243,39 @@ const GoldUpperUW = () => {
           <stop offset="0.394231" stopColor="#E9BB45" />
           <stop offset="0.596154" stopColor="#7D6629" />
           <stop offset="0.798077" stopColor="#E9BB45" />
+          <stop offset="1" stopColor="#7D6629" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+const GoldUpperMobile = () => {
+  return (
+    <svg
+      width="1034"
+      height="1463"
+      viewBox="0 0 1034 1463"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.0205078 0C0.0205078 58 14.5715 82 47.7647 82H509.114C514.722 82 528.121 85.8553 533.795 93.3447H970.39C970.51 93.3368 1033.02 89.2511 1033.02 151.544V442H1032.6L1032.6 1344.98L1009.72 1352.63L910.239 1387H86.4203C22.4776 1387 8.59619 1396.48 0.00319635 1462.48C-0.00256806 1455.48 0.00299606 1449.98 0.00319635 1462.48L0 432.5H0.0205078V0Z"
+        fill="url(#paint0_linear_676_3)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_676_3"
+          x1="60.237"
+          y1="1462.48"
+          x2="976.317"
+          y2="1462.48"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.168269" stopColor="#7D6629" stopOpacity="0" />
+          <stop offset="0.360577" stopColor="#E9BB45" />
+          <stop offset="0.596154" stopColor="#7D6629" />
+          <stop offset="0.855769" stopColor="#E9BB45" />
           <stop offset="1" stopColor="#7D6629" />
         </linearGradient>
       </defs>
