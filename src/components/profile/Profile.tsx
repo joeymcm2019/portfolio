@@ -68,7 +68,7 @@ const Profile = () => {
         <div className={s.intro_text}>
           <Typography variant="h4" font="primary" className={s.intro}>
             I enjoy full stack development along with building pixel perfect
-            dynamic UI/UX experiences. <br /> I enjoy the challenge of
+            dynamic UI/UX experiences. <br /> I also enjoy the challenge of
             engineering solutions for complex web problems across both business
             logic and UI/UX.
           </Typography>
