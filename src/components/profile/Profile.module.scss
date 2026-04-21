@@ -544,6 +544,8 @@ $ultra_wide_break: 1908px;
     }
 
     .experience_break {
+      margin-bottom: -125px;
+
       @include dynamicControl(
         (
           margin-bottom: -110px,
@@ -551,8 +553,6 @@ $ultra_wide_break: 1908px;
         $dynamic-start-point: $defaultDSP,
         $dynamic-end-point: 1300.98px
       );
-
-      margin-bottom: -125px;
     }
 
     .first_section {

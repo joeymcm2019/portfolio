@@ -310,6 +310,12 @@ $mobile-factor: 0.75;
               top: 0px;
               left: 35px;
 
+              transition:
+                top 0.35s ease-in-out,
+                left 0.35s ease-in-out,
+                z-index 0s 0.35s,
+                opacity 0.35s ease-in-out;
+
               @include dynamicControl(
                 (
                   width: 650 * 0.9px,
@@ -334,12 +340,6 @@ $mobile-factor: 0.75;
                 )
               );
 
-              transition:
-                top 0.35s ease-in-out,
-                left 0.35s ease-in-out,
-                z-index 0s 0.35s,
-                opacity 0.35s ease-in-out;
-
               iframe {
                 transition:
                   width 0.35s,
@@ -355,6 +355,12 @@ $mobile-factor: 0.75;
               height: 365 * 0.9px;
               top: 35px;
               left: 80px;
+
+              transition:
+                top 0.35s ease-in-out,
+                left 0.35s ease-in-out,
+                z-index 0s 0.35s,
+                opacity 0.35s ease-in-out;
 
               @include dynamicControl(
                 (
@@ -411,12 +417,6 @@ $mobile-factor: 0.75;
                   )
                 );
               }
-
-              transition:
-                top 0.35s ease-in-out,
-                left 0.35s ease-in-out,
-                z-index 0s 0.35s,
-                opacity 0.35s ease-in-out;
             }
 
             .front_video_midpoint {
@@ -425,6 +425,12 @@ $mobile-factor: 0.75;
               opacity: 0.5;
               top: 17px;
               left: 15px;
+
+              transition:
+                top 0.15s ease-in,
+                left 0.15s ease-in,
+                z-index 0s 0.15s,
+                opacity 0.15s ease-in-out;
 
               @include dynamicControl(
                 (
@@ -475,12 +481,6 @@ $mobile-factor: 0.75;
                   )
                 );
               }
-
-              transition:
-                top 0.15s ease-in,
-                left 0.15s ease-in,
-                z-index 0s 0.15s,
-                opacity 0.15s ease-in-out;
             }
 
             .back_video_midpoint {
@@ -489,6 +489,12 @@ $mobile-factor: 0.75;
               opacity: 0.5;
               left: 95px;
               top: 17px;
+
+              transition:
+                top 0.175s ease-in,
+                left 0.175s ease-in,
+                z-index 0s 0.175s,
+                opacity 0.175s ease-in-out;
 
               @include dynamicControl(
                 (
@@ -539,12 +545,6 @@ $mobile-factor: 0.75;
                   )
                 );
               }
-
-              transition:
-                top 0.175s ease-in,
-                left 0.175s ease-in,
-                z-index 0s 0.175s,
-                opacity 0.175s ease-in-out;
             }
           }
 
@@ -655,6 +655,9 @@ $mobile-factor: 0.75;
               height: 40px;
               border-radius: 5px;
 
+              transition: transform 0.3s ease-in-out;
+              cursor: pointer;
+
               @include dynamicControl(
                 (
                   width: 200px,
@@ -678,10 +681,6 @@ $mobile-factor: 0.75;
                   border-radius: 5px * $mobile-factor,
                 )
               );
-
-              transition: transform 0.3s ease-in-out;
-
-              cursor: pointer;
 
               @media (max-width: $targetViewWidth) {
                 &:active {
@@ -779,11 +778,11 @@ $mobile-factor: 0.75;
                 &:active::after {
                   border-radius: 3px;
 
+                  background-color: rgba(0, 0, 0, 0.5);
+
                   @media (max-width: 575.98px) {
                     border-radius: 0px;
                   }
-
-                  background-color: rgba(0, 0, 0, 0.5);
                 }
 
                 &:hover h4 {
@@ -810,11 +809,11 @@ $mobile-factor: 0.75;
                 &:active::after {
                   border-radius: 3px;
 
+                  background-color: rgba(0, 0, 0, 0.5);
+
                   @media (max-width: 575.98px) {
                     border-radius: 0px;
                   }
-
-                  background-color: rgba(0, 0, 0, 0.5);
                 }
 
                 &:active h4 {
@@ -890,6 +889,10 @@ $mobile-factor: 0.75;
               justify-content: center;
               align-items: center;
               gap: 60px;
+
+              transition:
+                transform 0.3s ease-in-out,
+                opacity 0.3s ease-in-out;
 
               @include dynamicControl(
                 (
@@ -1006,10 +1009,6 @@ $mobile-factor: 0.75;
                   )
                 );
               }
-
-              transition:
-                transform 0.3s ease-in-out,
-                opacity 0.3s ease-in-out;
 
               @media (max-width: $mobile-breakpoint) {
                 &:active {

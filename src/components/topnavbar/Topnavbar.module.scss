@@ -95,6 +95,10 @@ $ultra_wide_break: 1908px;
 
     h2 {
       color: white;
+      transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
+
       @include ultraWideControl(
         (
           font-size: 28px,
@@ -117,8 +121,6 @@ $ultra_wide_break: 1908px;
         $max-width: 500.98px,
         $targetWidth: 500.98px
       );
-
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
       @media (min-width: 600.98px) {
         &:hover {
@@ -145,6 +147,7 @@ $ultra_wide_break: 1908px;
     user-select: none;
     border: none;
     z-index: 5;
+    cursor: pointer;
 
     width: 45px;
     height: 45px;
@@ -175,7 +178,9 @@ $ultra_wide_break: 1908px;
       width: 100%;
       height: auto;
       user-select: none;
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
 
       @media (min-width: 600.98px) {
         &:hover {
@@ -192,8 +197,6 @@ $ultra_wide_break: 1908px;
         }
       }
     }
-
-    cursor: pointer;
   }
 
   .circle {
