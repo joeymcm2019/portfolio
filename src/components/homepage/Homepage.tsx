@@ -28,130 +28,130 @@ const useGrayscaleImage = (scannedData: ImageData["data"]) => {
 };
 
 const Homepage = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
 
-  //   const canvas = document.getElementById("canvas1") as HTMLCanvasElement;
-  //   if (!canvas) return;
+    const canvas = document.getElementById("canvas1") as HTMLCanvasElement;
+    if (!canvas) return;
 
-  //   const ctx = canvas.getContext("2d");
-  //   if (!ctx) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  //   canvas.width = 474;
-  //   canvas.height = 594;
+    canvas.width = 474;
+    canvas.height = 594;
 
-  //   const image1 = new window.Image();
-  //   image1.src = logo_img_src;
+    const image1 = new window.Image();
+    image1.src = logo.src;
 
-  //   image1.addEventListener("load", function () {
-  //     ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
-  //     const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  //     // const scannedData = scannedImage.data;
-  //     // useGrayscaleImage(scannedData);
+    image1.addEventListener("load", function () {
+      ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
+      const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      // const scannedData = scannedImage.data;
+      // useGrayscaleImage(scannedData);
 
-  //     const numberOfParticles = 5000;
-  //     const particles: Particle[] = [];
+      const numberOfParticles = 5000;
+      const particles: Particle[] = [];
 
-  //     let mappedImage: any[] = [];
-  //     for (let y = 0; y < canvas.height; y++) {
-  //       let row = [];
-  //       for (let x = 0; x < canvas.width; x++) {
-  //         const red = scannedImage.data[y * scannedImage.width * 4 + x * 4];
-  //         const green =
-  //           scannedImage.data[y * scannedImage.width * 4 + x * 4 + 1];
-  //         const blue =
-  //           scannedImage.data[y * scannedImage.width * 4 + x * 4 + 2];
-  //         const brightness = calculateRelativeBrightness(red, green, blue);
-  //         const cell = [brightness];
-  //         row.push(cell);
-  //       }
-  //       mappedImage.push(row);
-  //     }
+      let mappedImage: any[] = [];
+      for (let y = 0; y < canvas.height; y++) {
+        let row = [];
+        for (let x = 0; x < canvas.width; x++) {
+          const red = scannedImage.data[y * scannedImage.width * 4 + x * 4];
+          const green =
+            scannedImage.data[y * scannedImage.width * 4 + x * 4 + 1];
+          const blue =
+            scannedImage.data[y * scannedImage.width * 4 + x * 4 + 2];
+          const brightness = calculateRelativeBrightness(red, green, blue);
+          const cell = [brightness];
+          row.push(cell);
+        }
+        mappedImage.push(row);
+      }
 
-  //     // console.log("mappedImage: ", mappedImage);
+      // console.log("mappedImage: ", mappedImage);
 
-  //     function calculateRelativeBrightness(
-  //       red: number,
-  //       green: number,
-  //       blue: number,
-  //     ) {
-  //       return (
-  //         Math.sqrt(
-  //           red * red * 0.299 + green * green * 0.587 + blue * blue * 0.114,
-  //         ) / 100
-  //       );
-  //     }
+      function calculateRelativeBrightness(
+        red: number,
+        green: number,
+        blue: number,
+      ) {
+        return (
+          Math.sqrt(
+            red * red * 0.299 + green * green * 0.587 + blue * blue * 0.114,
+          ) / 100
+        );
+      }
 
-  //     class Particle {
-  //       x: number;
-  //       y: number;
-  //       speed: number;
-  //       velocity: number;
-  //       size: number;
-  //       position1: number;
-  //       position2: number;
-  //       ctx: CanvasRenderingContext2D;
-  //       constructor(ctx: CanvasRenderingContext2D) {
-  //         this.ctx = ctx;
-  //         this.x = Math.random() * canvas.width;
-  //         this.y = 0;
-  //         this.speed = 0;
-  //         this.velocity = Math.random() * 0.5;
-  //         this.size = Math.random() * 1.5 + 1;
-  //         this.position1 = Math.floor(this.y);
-  //         this.position2 = Math.floor(this.x);
-  //       }
-  //       update() {
-  //         this.position1 = Math.floor(this.y);
-  //         this.position2 = Math.floor(this.x);
-  //         // console.log("check: ", this.position1, this.position2);
-  //         // console.log(
-  //         //   "mappedImage: ",
-  //         //   mappedImage[this.position1][this.position2],
-  //         // );
-  //         this.speed = mappedImage[this.position1][this.position2][0];
-  //         // console.log("speed: ", this.speed);
-  //         let movement = 2.5 - this.speed + this.velocity;
-  //         this.y += movement;
-  //         if (this.y > canvas.height) {
-  //           this.y = 0;
-  //           this.x = Math.random() * canvas.width;
-  //         }
-  //       }
-  //       draw() {
-  //         this.ctx.beginPath();
-  //         this.ctx.fillStyle = "white";
-  //         this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-  //         this.ctx.fill();
-  //       }
-  //     }
+      class Particle {
+        x: number;
+        y: number;
+        speed: number;
+        velocity: number;
+        size: number;
+        position1: number;
+        position2: number;
+        ctx: CanvasRenderingContext2D;
+        constructor(ctx: CanvasRenderingContext2D) {
+          this.ctx = ctx;
+          this.x = Math.random() * canvas.width;
+          this.y = 0;
+          this.speed = 0;
+          this.velocity = Math.random() * 0.5;
+          this.size = Math.random() * 1.5 + 1;
+          this.position1 = Math.floor(this.y);
+          this.position2 = Math.floor(this.x);
+        }
+        update() {
+          this.position1 = Math.floor(this.y);
+          this.position2 = Math.floor(this.x);
+          // console.log("check: ", this.position1, this.position2);
+          // console.log(
+          //   "mappedImage: ",
+          //   mappedImage[this.position1][this.position2],
+          // );
+          this.speed = mappedImage[this.position1][this.position2][0];
+          // console.log("speed: ", this.speed);
+          let movement = 2.5 - this.speed + this.velocity;
+          this.y += movement;
+          if (this.y > canvas.height) {
+            this.y = 0;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+        draw() {
+          this.ctx.beginPath();
+          this.ctx.fillStyle = `rgb(${scannedImage.data[this.position1 * scannedImage.width * 4 + this.position2 * 4]}, ${scannedImage.data[this.position1 * scannedImage.width * 4 + this.position2 * 4 + 1]}, ${scannedImage.data[this.position1 * scannedImage.width * 4 + this.position2 * 4 + 2]})`;
+          this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          this.ctx.fill();
+        }
+      }
 
-  //     function init() {
-  //       for (let i = 0; i < numberOfParticles; i++) {
-  //         if (!ctx) continue;
-  //         particles.push(new Particle(ctx));
-  //       }
-  //     }
-  //     init();
+      function init() {
+        for (let i = 0; i < numberOfParticles; i++) {
+          if (!ctx) continue;
+          particles.push(new Particle(ctx));
+        }
+      }
+      init();
 
-  //     function animate() {
-  //       if (!ctx) return;
-  //       ctx.globalAlpha = 0.05;
-  //       ctx.fillStyle = "black";
-  //       ctx.fillRect(0, 0, canvas.width, canvas.height);
-  //       ctx.globalAlpha = 0.2;
-  //       for (let i = 0; i < particles.length; i++) {
-  //         particles[i].update();
-  //         ctx.globalAlpha = particles[i].speed / 20;
-  //         particles[i].draw();
-  //       }
-  //       requestAnimationFrame(animate);
-  //     }
-  //     animate();
+      function animate() {
+        if (!ctx) return;
+        ctx.globalAlpha = 0.05;
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 0.2;
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          ctx.globalAlpha = particles[i].speed / 5;
+          particles[i].draw();
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
 
-  //     ctx.putImageData(scannedImage, 0, 0);
-  //   });
-  // }, []);
+      ctx.putImageData(scannedImage, 0, 0);
+    });
+  }, []);
 
   //   const isMobile = useMediaQuery({ query: "(max-width: 600.98px)" });
 
@@ -161,7 +161,7 @@ const Homepage = () => {
         <TopNavBar />
       </div>
       <DirectionalFade delay={0.7} right className={s.logo} duration={0.4}>
-        <Image src={logo} alt="logo" loading="eager" />
+        <canvas className={s.canvas} id="canvas1"></canvas>
       </DirectionalFade>
       <div className={s.content}>
         <div className={s.lines}>
@@ -185,7 +185,6 @@ const Homepage = () => {
             A Fullstack Developer
           </Typography>
         </DirectionalFade>
-        {/* <canvas className={s.canvas} id="canvas1"></canvas> */}
         <DirectionalFade delay={3} up>
           <Image
             src={mountain}
