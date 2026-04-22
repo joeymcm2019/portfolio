@@ -9,11 +9,11 @@ $ultra_wide_break: 1908px;
   flex-direction: column;
   align-items: center;
   background-color: #014c8d;
-  padding-bottom: 250px;
+  padding-bottom: 50px;
 
   @include dynamicControl(
     (
-      padding-bottom: 250px,
+      padding-bottom: 50px,
     ),
     $dynamic-start-point: $defaultDSP,
     $dynamic-end-point: 1300.98px
