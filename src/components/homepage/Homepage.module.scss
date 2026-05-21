@@ -12,6 +12,10 @@ $ultra_wide_break: 1908px;
   align-items: center;
   overflow-x: hidden;
 
+  [disabled] {
+    opacity: 0.5;
+  }
+
   .logo {
     position: absolute;
     margin-left: 15px;
