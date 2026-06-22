@@ -12,6 +12,7 @@ import infiniLogo from "../infinigods.webp";
 import vhLogo from "../valhalla_logo.webp";
 import cavesLogo from "../CAVES-FINAL.png";
 import classNames from "classnames";
+import { section } from "framer-motion/client";
 
 type Props = {
   title: string;
@@ -157,7 +158,10 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
 
               <div className={s.right}>
                 <div
-                  className={classNames(s.top, sectionNumber > 4 ? s.top2 : "")}
+                  className={classNames(
+                    s.top,
+                    sectionNumber !== 4 ? s.top2 : "",
+                  )}
                 >
                   <button
                     onClick={() => {

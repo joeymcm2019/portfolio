@@ -171,12 +171,7 @@ const Profile = () => {
                     className={s.infini}
                   />
                 </button>
-                <button
-                  className={s.infini_button}
-                  onClick={() =>
-                    window.open("https://www.valhallafoundation.xyz", "_blank")
-                  }
-                >
+                <button className={s.infini_button}>
                   <Image
                     src={valhallaLogo}
                     alt="valhallaLogo"
@@ -193,19 +188,16 @@ const Profile = () => {
                 className={classNames(s.role, s.role1)}
               >
                 While working for InfiniGods, by far the biggest project I
-                worked on was their Valhalla Foundation site (
-                <a href="https://www.valhallafoundation.xyz" target="_blank">
-                  https://www.valhallafoundation.xyz
-                </a>
-                ). I Architected the front-end codebase structure for Valhalla
-                Foundations, and was the primary UI developer for the project. I
-                created and used my own custom scss functions to make all pages
-                and content work for all screen sizes. I implemented the popup
-                component, including functionality for having popups on top of
-                popups {"(used for staking UI)"}, and added a zoom animation to
-                make popups open and close more smoothly. The result was a UI/UX
-                that greatly stood out from competitors and that drew the
-                community in with excitement{" "}
+                worked on was their Valhalla Foundation site. I Architected the
+                front-end codebase structure for Valhalla Foundations, and was
+                the primary UI developer for the project. I created and used my
+                own custom scss functions to make all pages and content work for
+                all screen sizes. I implemented the popup component, including
+                functionality for having popups on top of popups{" "}
+                {"(used for staking UI)"}, and added a zoom animation to make
+                popups open and close more smoothly. The result was a UI/UX that
+                greatly stood out from competitors and that drew the community
+                in with excitement{" "}
                 {"(the site had tens of thousands of users)."}{" "}
                 <a href="/LetterOfRecommendation.pdf" download="LOR_McMahon">
                   Letter of recommendation from InfiniGods&apos; COO (download).
@@ -220,10 +212,9 @@ const Profile = () => {
             <React.Fragment>
               <BlueSection
                 title="STAKING"
-                link="https://www.valhallafoundation.xyz/stake"
+                link=""
                 text={`
             • Built highly complex UI/UX for user NFT staking (web3 development).\n
-            • https://www.valhallafoundation.xyz/stake\n
             • Implemented individual vault staking, multi-vault staking, and max-staking algorithms.\n
             • Engineered dynamic animations based on user's actions (leveling up vault, overclocking vault, deactivating vault).\n
             • Built business logic for user staking stats and created dynamic animations for displaying them.\n
@@ -234,9 +225,8 @@ const Profile = () => {
 
               <GreenSection
                 title="TOKENOMICS"
-                link="https://www.valhallafoundation.xyz/tokenomics"
+                link=""
                 text={`• Fully implemented this page from scratch, followed mocks 1:1 and worked with design team to create polished, fluid animations to elevate the user experience.\n
-                • https://www.valhallafoundation.xyz/tokenomics\n
                 • Line animations, cascading animations, number tick animations, graph animations, and more.\n
                 • Updated page as needed before token launch to keep token information up to date.`}
                 sectionNumber={1}
@@ -244,10 +234,9 @@ const Profile = () => {
               <div className={s.blue_gap}>
                 <BlueSection
                   title="COLLECTION"
-                  link="https://www.valhallafoundation.xyz/collection"
+                  link=""
                   text={`• Fully implemented dynamic, responsive UI, followed mocks 1:1, and polished animations.\n
                 • Implemented key business logic for determining user NFT sets (for front end).
-                  • https://www.valhallafoundation.xyz/collection\n
                   • Created custom animation for page header.
                   • Added custom animation for image shuffling for when user switches between pass types (see video).
                   • Created custom sticky footer for claiming rewards.
@@ -258,10 +247,9 @@ const Profile = () => {
               </div>
               <GreenSection
                 title="MISSIONS"
-                link="https://www.valhallafoundation.xyz/missions"
+                link=""
                 text={`
                 • Created dynamic, responsive UI for sign in page, multi-wallet connection, all leaderboards, and all tabs.\n
-                • https://www.valhallafoundation.xyz/missions.\n
                 • Assisted with mission task UI.\n
                 • Implemented custom tab buttons.\n
                 • Updated missions section UI for end of season claim.\n
@@ -272,10 +260,9 @@ const Profile = () => {
               <div className={classNames(s.blue_gap, s.experience_break)}>
                 <BlueSection
                   title={"HOMEPAGE"}
-                  link={"https://www.valhallafoundation.xyz"}
+                  link={""}
                   text={`
                 • Fully implemented this page from scratch, followed mocks 1:1, and added polished animations.\n
-                • https://www.valhallafoundation.xyz\n
                 • Designed and built a custom video UI that allows users to play/pause a promotional video, with smooth video size and background transitions.\n
                 • Implemented an animated vertical carousel for mobile, letting users seamlessly switch focus between stacked content panels with front-to-back transitions.
                 \n`}

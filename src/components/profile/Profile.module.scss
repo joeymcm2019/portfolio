@@ -282,32 +282,15 @@ $ultra_wide_break: 1908px;
         background-color: transparent;
         border: 0px;
 
-        cursor: pointer;
-
-        transition:
-          transform 0.3s ease-in-out,
-          opacity 0.3s ease-in-out;
-
-        @media (min-width: $targetViewWidth) {
-          &:hover {
-            transform: scale(1.025);
-          }
-
-          &:active {
-            opacity: 0.8;
-          }
-        }
-
-        @media (max-width: $targetViewWidth) {
-          &:active {
-            transform: scale(1.025);
-          }
-        }
-
         .infini {
           width: 290px;
           height: auto;
           user-select: none;
+          cursor: pointer;
+
+          transition:
+            transform 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
 
           @include dynamicControl(
             (
@@ -331,6 +314,22 @@ $ultra_wide_break: 1908px;
             ),
             $targetWidth: 532px
           );
+
+          @media (min-width: $targetViewWidth) {
+            &:hover {
+              transform: scale(1.025);
+            }
+
+            &:active {
+              opacity: 0.8;
+            }
+          }
+
+          @media (max-width: $targetViewWidth) {
+            &:active {
+              transform: scale(1.025);
+            }
+          }
         }
 
         .caves {
@@ -338,6 +337,11 @@ $ultra_wide_break: 1908px;
           height: auto;
           user-select: none;
           margin-bottom: 25px;
+          cursor: pointer;
+
+          transition:
+            transform 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
 
           @include dynamicControl(
             (
@@ -363,6 +367,22 @@ $ultra_wide_break: 1908px;
             ),
             $targetWidth: 532px
           );
+
+          @media (min-width: $targetViewWidth) {
+            &:hover {
+              transform: scale(1.025);
+            }
+
+            &:active {
+              opacity: 0.8;
+            }
+          }
+
+          @media (max-width: $targetViewWidth) {
+            &:active {
+              transform: scale(1.025);
+            }
+          }
         }
 
         .valhalla {

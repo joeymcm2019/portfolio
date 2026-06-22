@@ -505,6 +505,18 @@ $mobile-factor: 0.75;
             }
           }
 
+          .top2 {
+            button {
+              cursor: default;
+              &:hover {
+                transform: none;
+              }
+              &:active {
+                opacity: 1;
+              }
+            }
+          }
+
           .bottom {
             margin-top: 32px;
 

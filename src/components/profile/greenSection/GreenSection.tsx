@@ -61,8 +61,19 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
 
             <div className={s.video_and_text}>
               <div className={s.left}>
-                <div className={s.top}>
-                  <button onClick={() => window.open(link, "_blank")}>
+                <div
+                  className={classNames(
+                    s.top,
+                    sectionNumber >= 1 && sectionNumber <= 2 && s.top2,
+                  )}
+                >
+                  <button
+                    onClick={() => {
+                      if (link) {
+                        window.open(link, "_blank");
+                      }
+                    }}
+                  >
                     <Image
                       src={sectionNumber > 3 ? cavesLogo : infiniLogo}
                       alt="infinilogo"
