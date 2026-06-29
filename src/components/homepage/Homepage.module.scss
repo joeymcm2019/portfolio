@@ -321,6 +321,13 @@ $ultra_wide_break: 1908px;
         $dynamic-start-point: 375px,
         $dynamic-end-point: 800px
       );
+
+      @include ultraWideControl(
+        (
+          width: 474px,
+        ),
+        $start-point: $ultra_wide_break
+      );
     }
   }
 }
