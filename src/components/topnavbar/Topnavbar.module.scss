@@ -211,6 +211,8 @@ $ultra_wide_break: 1908px;
     border-radius: 50%;
     border: 5px solid #fff;
 
+    clip-path: inset(20% 0 0 0);
+
     @include ultraWideControl(
       (
         width: 286px,
@@ -254,10 +256,10 @@ $ultra_wide_break: 1908px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
+    bottom: 0%;
 
-    @media (min-width: $defaultDSP) and (max-width: 1545.98px) {
-      height: calc(9.32vw - 4px);
-      width: 20.71vw;
+    @media (min-width: $defaultDSP) and (max-width: $ultra_wide_break) {
+      border: 0.26vw solid #000000;
     }
 
     @media (max-width: $mobile-breakpoint) {
@@ -267,10 +269,23 @@ $ultra_wide_break: 1908px;
     @include ultraWideControl(
       (
         width: 320px,
-        height: 140px,
+        height: 286px,
       ),
       $start-point: $ultra_wide_break
     );
+
+    @include dynamicControl(
+      (
+        width: 320px,
+        height: 286px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px
+    );
+
+    @media (min-width: $ultra_wide_break) {
+      border: 0.26vw solid #000000;
+    }
 
     @media (max-width: 600.98px) {
       width: 190px;

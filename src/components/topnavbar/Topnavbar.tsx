@@ -30,7 +30,7 @@ const TopNavBar = () => {
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/joseph-mcmahon-950836149/",
-                "_blank"
+                "_blank",
               );
             }}
           >
