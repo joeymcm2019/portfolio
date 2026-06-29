@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ReactPlayer from "react-player";
 import { useMediaQuery } from "react-responsive";
 
 import s from "./BlueSection2.module.scss";
 
 import Typography from "@/components/typography/Typography";
 import { DirectionalFade } from "@/components/animation/DirectionalFade";
+import YouTubeEmbed from "@/components/profile/YouTubeEmbed";
 
 import infiniLogo from "../infinigods.webp";
 import classNames from "classnames";
@@ -87,11 +87,9 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                           s.back_video_midpoint,
                       )}
                     >
-                      <ReactPlayer
+                      <YouTubeEmbed
+                        title="Max staking video"
                         url={"https://youtu.be/I_di5XDw1fU"}
-                        controls
-                        width="100%"
-                        height="100%"
                       />
                     </div>
                     <div
@@ -106,21 +104,17 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                           s.front_video_midpoint,
                       )}
                     >
-                      <ReactPlayer
+                      <YouTubeEmbed
+                        title="Manual staking video"
                         url={"https://www.youtube.com/watch?v=RB1OTPWRNzs"}
-                        controls
-                        width="100%"
-                        height="100%"
                       />
                     </div>
                   </div>
                 ) : (
                   <div className={s.normal}>
-                    <ReactPlayer
+                    <YouTubeEmbed
+                      title={`${title} video`}
                       url={`${youtubeUrls[sectionNumber - 2]}`}
-                      controls
-                      width="100%"
-                      height="100%"
                     />
                   </div>
                 )}

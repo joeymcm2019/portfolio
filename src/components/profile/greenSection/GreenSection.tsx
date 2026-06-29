@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import ReactPlayer from "react-player";
 import { useMediaQuery } from "react-responsive";
 
 import s from "./GreenSection.module.scss";
 
 import Typography from "@/components/typography/Typography";
 import { DirectionalFade } from "@/components/animation/DirectionalFade";
+import YouTubeEmbed from "@/components/profile/YouTubeEmbed";
 
 import infiniLogo from "../infinigods.webp";
 import vhLogo from "../valhalla_logo.webp";
@@ -115,11 +115,9 @@ const GreenSection = ({ title, text, link, sectionNumber }: Props) => {
               </div>
               <div className={s.right}>
                 <div className={s.normal}>
-                  <ReactPlayer
+                  <YouTubeEmbed
+                    title={`${title} video`}
                     url={video_urls[sectionNumber - 1]}
-                    controls
-                    width="100%"
-                    height="100%"
                   />
                 </div>
               </div>

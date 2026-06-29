@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 
 import s from "./Profile.module.scss";
 
 import Typography from "../typography/Typography";
+import BlueSection from "@/components/profile/blueSection/BlueSection";
+import BlueSection2 from "@/components/profile/blueSection2/BlueSection2";
+import GreenSection from "@/components/profile/greenSection/GreenSection";
+import GreenSection2 from "@/components/profile/greenSection2/GreenSection2";
 
 import profilePic from "./profile_pic.webp";
 import infiniLogo from "./infinilogo.webp";
@@ -17,34 +20,6 @@ import feedPic from "./feed.webp";
 import profileImage from "./personalProfile.webp";
 
 import classNames from "classnames";
-
-const BlueSection = dynamic(
-  () => import("@/components/profile/blueSection/BlueSection"),
-  {
-    ssr: false,
-  },
-);
-
-const BlueSection2 = dynamic(
-  () => import("@/components/profile/blueSection2/BlueSection2"),
-  {
-    ssr: false,
-  },
-);
-
-const GreenSection = dynamic(
-  () => import("@/components/profile/greenSection/GreenSection"),
-  {
-    ssr: false,
-  },
-);
-
-const GreenSection2 = dynamic(
-  () => import("@/components/profile/greenSection2/GreenSection2"),
-  {
-    ssr: false,
-  },
-);
 
 const Profile = () => {
   const [showExperience, setShowExperience] = useState(false);
@@ -61,7 +36,12 @@ const Profile = () => {
   return (
     <div className={s.container}>
       <div className={s.content}>
-        <Image src={profilePic} alt="profile pic" className={s.profile_pic} />
+        <Image
+          src={profilePic}
+          alt="profile pic"
+          className={s.profile_pic}
+          loading="eager"
+        />
         <Typography variant="h2" font="primary" className={s.welcome}>
           Welcome!
         </Typography>
