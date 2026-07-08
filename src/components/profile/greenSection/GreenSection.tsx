@@ -6,7 +6,7 @@ import s from "./GreenSection.module.scss";
 
 import Typography from "@/components/typography/Typography";
 import { DirectionalFade } from "@/components/animation/DirectionalFade";
-import YouTubeEmbed from "@/components/profile/YouTubeEmbed";
+import { YouTubeEmbed } from "@/components/profile/YouTubeEmbed";
 
 import infiniLogo from "../infinigods.webp";
 import vhLogo from "../valhalla_logo.webp";
