@@ -8,7 +8,8 @@ $mobile-factor: 0.75;
   align-items: center;
   width: 100%;
 
-  iframe {
+  iframe,
+  :global(.youtube-embed-surface) {
     border: none;
   }
 
@@ -21,6 +22,25 @@ $mobile-factor: 0.75;
     .blue_container {
       width: 100%;
       position: relative;
+
+      .desktop_svg,
+      .mobile_svg {
+        display: block;
+      }
+
+      .mobile_svg {
+        display: none;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        .desktop_svg {
+          display: none;
+        }
+
+        .mobile_svg {
+          display: block;
+        }
+      }
 
       .blue_background {
         position: relative;
@@ -275,7 +295,8 @@ $mobile-factor: 0.75;
               )
             );
 
-            iframe {
+            iframe,
+            :global(.youtube-embed-surface) {
               border-radius: 10px;
               width: 650 * 0.9px;
               height: 365 * 0.9px;
@@ -344,7 +365,8 @@ $mobile-factor: 0.75;
                 )
               );
 
-              iframe {
+              iframe,
+              :global(.youtube-embed-surface) {
                 transition:
                   width 0.35s,
                   height 0.35s;
@@ -393,7 +415,8 @@ $mobile-factor: 0.75;
                 )
               );
 
-              iframe {
+              iframe,
+              :global(.youtube-embed-surface) {
                 width: 650 * 0.9 * 0.97px;
                 height: 365 * 0.9 * 0.97px;
                 transition:
@@ -457,7 +480,8 @@ $mobile-factor: 0.75;
                 )
               );
 
-              iframe {
+              iframe,
+              :global(.youtube-embed-surface) {
                 width: 576px;
                 height: 324px;
                 transition:
@@ -521,7 +545,8 @@ $mobile-factor: 0.75;
                 )
               );
 
-              iframe {
+              iframe,
+              :global(.youtube-embed-surface) {
                 width: 576px;
                 height: 324px;
                 transition:
@@ -552,7 +577,8 @@ $mobile-factor: 0.75;
             }
           }
 
-          iframe {
+          iframe,
+          :global(.youtube-embed-surface) {
             border-radius: 10px;
             width: 650px;
             height: 365px;
@@ -607,7 +633,8 @@ $mobile-factor: 0.75;
               )
             );
 
-            iframe {
+            iframe,
+            :global(.youtube-embed-surface) {
               box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
               border: none;
 

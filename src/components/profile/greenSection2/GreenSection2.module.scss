@@ -18,6 +18,25 @@ $mobile-factor: 0.75;
       width: 100%;
       position: relative;
 
+      .desktop_svg,
+      .mobile_svg {
+        display: block;
+      }
+
+      .mobile_svg {
+        display: none;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        .desktop_svg {
+          display: none;
+        }
+
+        .mobile_svg {
+          display: block;
+        }
+      }
+
       .blue_background {
         position: relative;
         z-index: 2;
@@ -264,7 +283,8 @@ $mobile-factor: 0.75;
             );
           }
 
-          iframe {
+          iframe,
+          :global(.youtube-embed-surface) {
             width: 650px;
             height: 365px;
             border-radius: 10px;

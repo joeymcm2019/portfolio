@@ -1,31 +1,60 @@
+import { useState } from "react";
+
+import s from "./YouTubeEmbed.module.scss";
+
 type Props = {
   title: string;
   url: string;
 };
 
 const getYouTubeId = (url: string) => {
-  const parsedUrl = new URL(url);
-
-  if (parsedUrl.hostname === "youtu.be") {
-    return parsedUrl.pathname.slice(1);
-  }
-
-  return parsedUrl.searchParams.get("v");
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+  return match?.[1] ?? "";
 };
 
-const YouTubeEmbed = ({ title, url }: Props) => {
+export const YouTubeEmbed = ({ title, url }: Props) => {
+  const [loaded, setLoaded] = useState(false);
+  const [thumbnailQuality, setThumbnailQuality] = useState<
+    "maxresdefault" | "sddefault" | "hqdefault"
+  >("maxresdefault");
   const videoId = getYouTubeId(url);
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
 
   if (!videoId) return null;
+
+  if (!loaded) {
+    return (
+      <button
+        type="button"
+        onClick={() => setLoaded(true)}
+        aria-label={`Play ${title}`}
+        className={`${s.placeholder} youtube-embed-surface`}
+      >
+        <img
+          src={thumbnail}
+          alt={title}
+          loading="lazy"
+          onError={() => {
+            setThumbnailQuality((currentQuality) =>
+              currentQuality === "maxresdefault" ? "sddefault" : "hqdefault",
+            );
+          }}
+        />
+        <span className={s.playButton}>▶</span>
+      </button>
+    );
+  }
 
   return (
     <iframe
       title={title}
-      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`}
+      src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
       width="100%"
       height="100%"
+      loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; compute-pressure; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
+      className={`${s.frame} youtube-embed-surface`}
       referrerPolicy="strict-origin-when-cross-origin"
     />
   );
