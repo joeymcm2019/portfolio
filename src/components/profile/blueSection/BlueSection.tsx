@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
-
 import s from "./BlueSection.module.scss";
 
 import Typography from "@/components/typography/Typography";
@@ -24,7 +22,6 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [toggle, setToggle] = useState(0);
   const [startSwapAnimation, setStartSwapAnimation] = useState(false);
-  const isMobile = useMediaQuery({ query: "(max-width: 1033.98px)" });
 
   const youtubeUrls = [
     "https://www.youtube.com/watch?v=efC96PHp47U",
@@ -47,10 +44,20 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
         <div className={s.content}>
           <div className={s.blue_container}>
             <div className={s.blue_background}>
-              {isMobile ? <MobileBG /> : <UltraWideBG />}
+              <span className={s.desktop_svg}>
+                <UltraWideBG />
+              </span>
+              <span className={s.mobile_svg}>
+                <MobileBG />
+              </span>
             </div>
             <div className={s.shadow}>
-              {isMobile ? <MobileBG /> : <UltraWideBG />}
+              <span className={s.desktop_svg}>
+                <UltraWideBG />
+              </span>
+              <span className={s.mobile_svg}>
+                <MobileBG />
+              </span>
             </div>
             <div
               className={classNames(
@@ -58,7 +65,12 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_line_active,
               )}
             >
-              {isMobile ? <MobileGold /> : <GoldLineUW />}
+              <span className={s.desktop_svg}>
+                <GoldLineUW />
+              </span>
+              <span className={s.mobile_svg}>
+                <MobileGold />
+              </span>
             </div>
             <div
               className={classNames(
@@ -66,7 +78,12 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                 animationStarted && s.gold_upper_active,
               )}
             >
-              {isMobile ? <GoldUpperMobile /> : <GoldUpperUW />}
+              <span className={s.desktop_svg}>
+                <GoldUpperUW />
+              </span>
+              <span className={s.mobile_svg}>
+                <GoldUpperMobile />
+              </span>
             </div>
 
             <div

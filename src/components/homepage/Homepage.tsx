@@ -195,7 +195,7 @@ const Homepage = () => {
         </DirectionalFade>
         <DirectionalFade delay={2} up>
           <Typography variant="h3" font="primary" className={s.title}>
-            A Fullstack Developer
+            A Software Engineer
           </Typography>
         </DirectionalFade>
 

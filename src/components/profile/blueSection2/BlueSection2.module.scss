@@ -17,6 +17,26 @@ $mobile-factor: 0.75;
     .blue_container {
       width: 100%;
       position: relative;
+
+      .desktop_svg,
+      .mobile_svg {
+        display: block;
+      }
+
+      .mobile_svg {
+        display: none;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        .desktop_svg {
+          display: none;
+        }
+
+        .mobile_svg {
+          display: block;
+        }
+      }
+
       .video_container_inactive {
         content: "";
         position: fixed;

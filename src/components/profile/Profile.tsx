@@ -23,6 +23,7 @@ import classNames from "classnames";
 
 const Profile = () => {
   const [showExperience, setShowExperience] = useState(true);
+
   //   const [showExperience2, setShowExperience2] = useState(false);
 
   // useEffect(() => {
@@ -47,10 +48,12 @@ const Profile = () => {
         </Typography>
         <div className={s.intro_text}>
           <Typography variant="h4" font="primary" className={s.intro}>
-            I enjoy full stack development along with building pixel perfect
-            dynamic UI/UX experiences. <br /> I also enjoy the challenge of
-            engineering solutions for complex web problems across both business
-            logic and UI/UX.
+            I enjoy building reliable, maintainable software across the full
+            stack.
+            <br className={s.intro_break} /> Whether I&apos;m designing complex
+            business logic or crafting polished user interfaces,
+            <br className={s.intro_break} /> I enjoy solving challenging
+            engineering problems that create great user experiences.
           </Typography>
 
           {showExperience && (

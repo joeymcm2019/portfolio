@@ -102,12 +102,12 @@ $ultra_wide_break: 1908px;
       .intro {
         margin-top: 30px;
         text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
 
         @include dynamicControl(
           (
             margin-top: 30px,
-            padding-right: 25px,
-            padding-left: 25px,
           ),
           $dynamic-start-point: $defaultDSP,
           $dynamic-end-point: 1300.98px
@@ -124,11 +124,17 @@ $ultra_wide_break: 1908px;
           (
             margin-top: 20px,
             font-size: 15.5px,
-            padding-right: 10px,
-            padding-left: 10px,
+            padding-right: 13px,
+            padding-left: 13px,
           ),
           $targetWidth: 532px
         );
+      }
+
+      .intro_break {
+        @media (max-width: 687px) {
+          display: none;
+        }
       }
 
       .goal {
