@@ -22,16 +22,16 @@ import profileImage from "./personalProfile.webp";
 import classNames from "classnames";
 
 const Profile = () => {
-  const [showExperience, setShowExperience] = useState(false);
+  const [showExperience, setShowExperience] = useState(true);
   //   const [showExperience2, setShowExperience2] = useState(false);
 
-  useEffect(() => {
-    if (!showExperience) {
-      setTimeout(() => {
-        setShowExperience(true);
-      }, 4000);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!showExperience) {
+  //     setTimeout(() => {
+  //       setShowExperience(true);
+  //     }, 4000);
+  //   }
+  // }, []);
 
   return (
     <div className={s.container}>

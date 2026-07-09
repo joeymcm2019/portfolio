@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 // import { useMediaQuery } from "react-responsive";
 
@@ -26,7 +26,7 @@ const useGrayscaleImage = (scannedData: ImageData["data"]) => {
 };
 
 const Homepage = () => {
-  const [showExperience, setShowExperience] = React.useState(false);
+  const [showExperience, setShowExperience] = useState(true);
 
   useEffect(() => {
     if (showExperience) {
@@ -158,13 +158,13 @@ const Homepage = () => {
     }
   }, [showExperience]);
 
-  useEffect(() => {
-    if (!showExperience) {
-      setTimeout(() => {
-        setShowExperience(true);
-      }, 4000);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!showExperience) {
+  //     setTimeout(() => {
+  //       setShowExperience(true);
+  //     }, 4000);
+  //   }
+  // }, []);
 
   //   const isMobile = useMediaQuery({ query: "(max-width: 600.98px)" });
 

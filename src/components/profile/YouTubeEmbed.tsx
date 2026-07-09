@@ -14,8 +14,11 @@ const getYouTubeId = (url: string) => {
 
 export const YouTubeEmbed = ({ title, url }: Props) => {
   const [loaded, setLoaded] = useState(false);
+  const [thumbnailQuality, setThumbnailQuality] = useState<
+    "maxresdefault" | "sddefault" | "hqdefault"
+  >("maxresdefault");
   const videoId = getYouTubeId(url);
-  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
 
   if (!videoId) return null;
 
@@ -27,7 +30,16 @@ export const YouTubeEmbed = ({ title, url }: Props) => {
         aria-label={`Play ${title}`}
         className={`${s.placeholder} youtube-embed-surface`}
       >
-        <img src={thumbnail} alt={title} loading="lazy" />
+        <img
+          src={thumbnail}
+          alt={title}
+          loading="lazy"
+          onError={() => {
+            setThumbnailQuality((currentQuality) =>
+              currentQuality === "maxresdefault" ? "sddefault" : "hqdefault",
+            );
+          }}
+        />
         <span className={s.playButton}>▶</span>
       </button>
     );
