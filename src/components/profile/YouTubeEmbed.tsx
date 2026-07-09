@@ -25,7 +25,7 @@ export const YouTubeEmbed = ({ title, url }: Props) => {
         type="button"
         onClick={() => setLoaded(true)}
         aria-label={`Play ${title}`}
-        className={s.placeholder}
+        className={`${s.placeholder} youtube-embed-surface`}
       >
         <img src={thumbnail} alt={title} loading="lazy" />
         <span className={s.playButton}>▶</span>
@@ -42,7 +42,7 @@ export const YouTubeEmbed = ({ title, url }: Props) => {
       loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; compute-pressure; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
-      className={s.frame}
+      className={`${s.frame} youtube-embed-surface`}
       referrerPolicy="strict-origin-when-cross-origin"
     />
   );

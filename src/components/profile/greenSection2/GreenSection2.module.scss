@@ -264,7 +264,8 @@ $mobile-factor: 0.75;
             );
           }
 
-          iframe {
+          iframe,
+          :global(.youtube-embed-surface) {
             width: 650px;
             height: 365px;
             border-radius: 10px;
