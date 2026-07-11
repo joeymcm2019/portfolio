@@ -384,7 +384,7 @@ const Profile = () => {
           <div className={s.other_experience}>
             <Image src={furbleLogo} alt="logo" className={s.logo} />
             <Typography variant="h3" font="primary" className={s.title}>
-              Application Developer
+              Software Engineer
             </Typography>
             <div className={s.furbleImages}>
               <Image src={splashScreen} alt="Furble Splash Screen" />
