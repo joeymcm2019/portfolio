@@ -15,7 +15,7 @@ const TopNavBar = () => {
 
   return (
     <div className={s.container}>
-      <DirectionalFade up delay={isSafari ? 3 : 2} className={s.outer}>
+      <DirectionalFade up delay={isSafari ? 3 : 1} className={s.outer}>
         <div className={s.buttons_container}>
           <button className={s.left_link}>
             <Typography variant="h2" font="primary">
