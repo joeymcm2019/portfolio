@@ -16,6 +16,7 @@ const getYouTubeId = (url: string) => {
 export const YouTubeEmbed = ({ title, url, isActive = true }: Props) => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [loaded, setLoaded] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
   const [thumbnailQuality, setThumbnailQuality] = useState<
     "maxresdefault" | "sddefault" | "hqdefault"
   >("maxresdefault");
@@ -41,7 +42,10 @@ export const YouTubeEmbed = ({ title, url, isActive = true }: Props) => {
     return (
       <button
         type="button"
-        onClick={() => setLoaded(true)}
+        onClick={() => {
+          setIframeLoaded(false);
+          setLoaded(true);
+        }}
         aria-label={`Play ${title}`}
         className={`${s.placeholder} youtube-embed-surface`}
       >
@@ -61,18 +65,34 @@ export const YouTubeEmbed = ({ title, url, isActive = true }: Props) => {
   }
 
   return (
-    <iframe
-      ref={iframeRef}
-      title={title}
-      src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1`}
-      width="100%"
-      height="100%"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; compute-pressure; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className={`${s.frame} youtube-embed-surface`}
-      referrerPolicy="strict-origin-when-cross-origin"
-    />
+    <div className={`${s.player} youtube-embed-surface`}>
+      <iframe
+        ref={iframeRef}
+        title={title}
+        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1`}
+        width="100%"
+        height="100%"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; compute-pressure; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className={iframeLoaded ? s.frameReady : s.frame}
+        referrerPolicy="strict-origin-when-cross-origin"
+        onLoad={() => setIframeLoaded(true)}
+      />
+      {!iframeLoaded && (
+        <img
+          src={thumbnail}
+          alt=""
+          loading="lazy"
+          className={s.loadingThumbnail}
+          onError={() => {
+            setThumbnailQuality((currentQuality) =>
+              currentQuality === "maxresdefault" ? "sddefault" : "hqdefault",
+            );
+          }}
+        />
+      )}
+    </div>
   );
 };
 

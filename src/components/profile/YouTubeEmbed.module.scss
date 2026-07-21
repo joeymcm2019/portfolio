@@ -1,12 +1,44 @@
 @use "./SizeControl.scss" as *;
 
 .placeholder,
-.frame {
+.player {
   display: block;
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 10px;
+}
+
+.player {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.frame,
+.frameReady,
+.loadingThumbnail {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
+}
+
+.frame {
+  opacity: 0;
+}
+
+.frameReady {
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
+.loadingThumbnail {
+  z-index: 1;
+  object-fit: cover;
 }
 
 .placeholder {
