@@ -164,6 +164,7 @@ type Props = {
   instant?: boolean;
   onStart?: () => void;
   start?: boolean;
+  startOnMount?: boolean;
   duration?: number;
   children?: any;
   onEnd?: () => void;
@@ -187,6 +188,7 @@ export const DirectionalFade = (props: Props) => {
     instant = false,
     onStart,
     start,
+    startOnMount = false,
     children,
     onEnd,
     variant,
@@ -218,13 +220,13 @@ export const DirectionalFade = (props: Props) => {
     <motion.div
       variants={variant ? variant : direction}
       initial={"hidden"}
-      whileInView="show"
+      {...(!startOnMount && { whileInView: "show" })}
       onAnimationStart={onStart}
       onAnimationComplete={() => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         onEnd && onEnd();
       }}
-      {...(start && { animate: "show" })}
+      {...((start || startOnMount) && { animate: "show" })}
       viewport={{ once: true, amount: instant ? 0 : 0.5 }}
       {...{ className }}
     >

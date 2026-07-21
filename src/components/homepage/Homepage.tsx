@@ -173,33 +173,39 @@ const Homepage = () => {
       <div className={s.top}>
         <TopNavBar />
       </div>
-      <DirectionalFade delay={0.7} right className={s.logo} duration={0.4}>
+      <DirectionalFade
+        startOnMount
+        delay={0.7}
+        right
+        className={s.logo}
+        duration={0.4}
+      >
         <Image src={logo} alt="logo" loading="eager" />
       </DirectionalFade>
       <div className={s.content}>
         <div className={s.lines}>
-          <DirectionalFade right delay={2}>
+          <DirectionalFade startOnMount right delay={2}>
             <LineSVG />
           </DirectionalFade>
-          <DirectionalFade left delay={2}>
+          <DirectionalFade startOnMount left delay={2}>
             <div className={s.line2}>
               <LineSVG />
             </div>
           </DirectionalFade>
         </div>
 
-        <DirectionalFade delay={2} up>
+        <DirectionalFade startOnMount delay={2} up>
           <Typography variant="h1Large" font="secondary" className={s.header}>
             I&apos;m Joey
           </Typography>
         </DirectionalFade>
-        <DirectionalFade delay={2} up>
+        <DirectionalFade startOnMount delay={2} up>
           <Typography variant="h3" font="primary" className={s.title}>
             A Software Engineer
           </Typography>
         </DirectionalFade>
 
-        <DirectionalFade delay={3} up>
+        <DirectionalFade startOnMount delay={3} up>
           <Image
             src={mountain}
             alt="mountain"
