@@ -18,7 +18,7 @@ const TopNavBar = () => {
       <DirectionalFade
         up
         startOnMount
-        delay={isSafari ? 3 : 1}
+        delay={isSafari ? 3 : 3}
         className={s.outer}
       >
         <div className={s.buttons_container}>
