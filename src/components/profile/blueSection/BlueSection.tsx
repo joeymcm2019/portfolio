@@ -110,6 +110,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                       <YouTubeEmbed
                         title="Max staking video"
                         url={"https://youtu.be/I_di5XDw1fU"}
+                        isActive={toggle === 0}
                       />
                     </div>
                     <div
@@ -127,6 +128,7 @@ const BlueSection = ({ title, text, link, sectionNumber }: Props) => {
                       <YouTubeEmbed
                         title="Manual staking video"
                         url={"https://www.youtube.com/watch?v=RB1OTPWRNzs"}
+                        isActive={toggle === 1}
                       />
                     </div>
                   </div>

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import s from "./YouTubeEmbed.module.scss";
 
 type Props = {
   title: string;
   url: string;
+  isActive?: boolean;
 };
 
 const getYouTubeId = (url: string) => {
@@ -12,13 +13,27 @@ const getYouTubeId = (url: string) => {
   return match?.[1] ?? "";
 };
 
-export const YouTubeEmbed = ({ title, url }: Props) => {
+export const YouTubeEmbed = ({ title, url, isActive = true }: Props) => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [thumbnailQuality, setThumbnailQuality] = useState<
     "maxresdefault" | "sddefault" | "hqdefault"
   >("maxresdefault");
   const videoId = getYouTubeId(url);
   const thumbnail = `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
+
+  useEffect(() => {
+    if (!isActive && loaded) {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "pauseVideo",
+          args: [],
+        }),
+        "https://www.youtube-nocookie.com",
+      );
+    }
+  }, [isActive, loaded]);
 
   if (!videoId) return null;
 
@@ -47,8 +62,9 @@ export const YouTubeEmbed = ({ title, url }: Props) => {
 
   return (
     <iframe
+      ref={iframeRef}
       title={title}
-      src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+      src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1`}
       width="100%"
       height="100%"
       loading="lazy"
