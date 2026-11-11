@@ -41,6 +41,8 @@ $ultra_wide_break: 1908px;
   }
 
   .outer {
+    position: relative;
+    z-index: 4;
     width: 100%;
   }
 
@@ -83,7 +85,93 @@ $ultra_wide_break: 1908px;
     );
   }
 
+  .work_menu {
+    position: relative;
+    z-index: 6;
+  }
+
+  .chevron {
+    flex-shrink: 0;
+    transition: transform 280ms ease;
+  }
+
+  .chevron_open {
+    transform: rotate(180deg);
+  }
+
+  .dropdown,
+  .project_links {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 280ms ease, opacity 220ms ease,
+      visibility 280ms;
+  }
+
+  .expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    width: 325px;
+    max-width: calc(100vw - 36px);
+  }
+
+  .dropdown_clip {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .dropdown_panel {
+    padding: 8px;
+    background: #080808;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px #0008;
+
+    a,
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 5px;
+      background: transparent;
+      color: white;
+      font: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 180ms ease;
+
+      &:hover { background: #252525; }
+      &:focus-visible { outline: 2px solid white; outline-offset: -2px; }
+    }
+  }
+
+  .project_links a {
+    padding-left: 12px;
+    color: #ddd;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dropdown, .project_links, .chevron { transition: none; }
+  }
+
   .left_link {
+    gap: 10px;
+    color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -92,6 +180,34 @@ $ultra_wide_break: 1908px;
     background-color: transparent;
     user-select: none;
     z-index: 5;
+
+    .chevron {
+      height: 28px;
+      width: auto;
+
+      @include ultraWideControl(
+        (
+          height: 28px,
+        ),
+        $start-point: $ultra_wide_break
+      );
+
+      @include dynamicControl(
+        (
+          height: 28px,
+        ),
+        $dynamic-start-point: $defaultDSP,
+        $dynamic-end-point: 1545.98px
+      );
+
+      @include mobileControl2(
+        (
+          height: 19px,
+        ),
+        $max-width: 500.98px,
+        $targetWidth: 500.98px,
+      );
+    }
 
     h2 {
       color: white;
@@ -137,6 +253,30 @@ $ultra_wide_break: 1908px;
         }
       }
     }
+
+    @include ultraWideControl(
+      (
+        gap: 10px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+
+    @include dynamicControl(
+      (
+        gap: 10px,
+      ),
+      $dynamic-start-point: $defaultDSP,
+      $dynamic-end-point: 1545.98px,
+    );
+
+      @include mobileControl2(
+        (
+          gap: 7px,
+        ),
+        $max-width: 500.98px,
+        $targetWidth: 500.98px
+      );
+
   }
 
   .right_link {
