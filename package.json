@@ -25,5 +25,9 @@
     "eslint": "^9",
     "eslint-config-next": "^16.2.4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "unrs-resolver@1.7.2": true
   }
 }
