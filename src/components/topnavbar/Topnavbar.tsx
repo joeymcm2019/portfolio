@@ -11,12 +11,14 @@ import linkedIN from "./linked.png";
 const TopNavBar = () => {
   const [workOpen, setWorkOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const [experienceOpen, setExperienceOpen] = useState(false);
   const workRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   const closeWork = () => {
     setWorkOpen(false);
     setProjectsOpen(false);
+    setExperienceOpen(false);
   };
 
   useEffect(() => {
@@ -59,6 +61,9 @@ const TopNavBar = () => {
                 if (projectsOpen) {
                   setProjectsOpen(false);
                   document.getElementById("personal-projects-trigger")?.focus();
+                } else if (experienceOpen) {
+                  setExperienceOpen(false);
+                  document.getElementById("experience-trigger")?.focus();
                 } else {
                   closeWork();
                   triggerRef.current?.focus();
@@ -75,6 +80,7 @@ const TopNavBar = () => {
               onClick={() => {
                 setWorkOpen(!workOpen);
                 setProjectsOpen(false);
+                setExperienceOpen(false);
               }}
             >
               <Typography variant="h2" font="primary">My Work</Typography>
@@ -94,6 +100,48 @@ const TopNavBar = () => {
                   <a href="https://github.com/joeymcm2019" target="_blank" rel="noopener noreferrer" onClick={closeWork}>
                     GitHub
                   </a>
+                  <button
+                    id="experience-trigger"
+                    type="button"
+                    aria-expanded={experienceOpen}
+                    aria-controls="experience-links"
+                    onClick={() => setExperienceOpen(!experienceOpen)}
+                  >
+                    Experience {chevron(experienceOpen)}
+                  </button>
+                  <div
+                    id="experience-links"
+                    className={`${s.project_links} ${experienceOpen ? s.expanded : ""}`}
+                    inert={!experienceOpen}
+                    aria-hidden={!experienceOpen}
+                  >
+                    <div className={s.dropdown_clip}>
+                      {[
+                        ["experience-caves", "Caves Dig & Dash"],
+                        ["experience-valhalla", "Valhalla Foundation"],
+                        ["experience-infinigods", "InfiniGods"],
+                        ["experience-furble", "Furble"],
+                      ].map(([id, label]) => (
+                        <button
+                          key={id}
+                          type="button"
+                          onClick={() => {
+                            const target = document.getElementById(id);
+                            closeWork();
+                            target?.focus({ preventScroll: true });
+                            target?.scrollIntoView({
+                              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                                ? "instant"
+                                : "smooth",
+                              block: "start",
+                            });
+                          }}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                   <button
                     id="personal-projects-trigger"
                     type="button"

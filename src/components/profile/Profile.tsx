@@ -64,7 +64,7 @@ const Profile = () => {
               <Typography variant="h2" font="primary" className={s.experience}>
                 Experience
               </Typography>
-              <div className={s.logos}>
+              <div id="experience-caves" tabIndex={-1} className={s.logos}>
                 <button
                   className={s.infini_button}
                   onClick={() =>
@@ -149,6 +149,8 @@ const Profile = () => {
                   }
                 >
                   <Image
+                    id="experience-valhalla"
+                    tabIndex={-1}
                     src={infiniLogo}
                     alt="infinilogo"
                     className={s.infini}
@@ -156,6 +158,7 @@ const Profile = () => {
                 </button>
                 <button className={s.infini_button}>
                   <Image
+
                     src={valhallaLogo}
                     alt="valhallaLogo"
                     className={s.valhalla}
@@ -271,7 +274,7 @@ const Profile = () => {
         </div>
         {showExperience && (
           <React.Fragment>
-            <div className={s.logos}>
+            <div id="experience-infinigods" tabIndex={-1} className={s.logos}>
               <button
                 className={s.infini_button}
                 onClick={() =>
@@ -382,7 +385,7 @@ const Profile = () => {
         </div>
         {showExperience && (
           <div className={s.other_experience}>
-            <Image src={furbleLogo} alt="logo" className={s.logo} />
+            <Image id="experience-furble" tabIndex={-1} src={furbleLogo} alt="logo" className={s.logo} />
             <Typography variant="h3" font="primary" className={s.title}>
               Software Engineer
             </Typography>

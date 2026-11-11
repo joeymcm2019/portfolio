@@ -121,7 +121,13 @@ $ultra_wide_break: 1908px;
     top: calc(100% + 14px);
     left: 0;
     width: 325px;
-    max-width: calc(100vw - 36px);
+
+    @include ultraWideControl(
+      (
+        width: 325px
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 
   .dropdown_clip {
@@ -134,7 +140,6 @@ $ultra_wide_break: 1908px;
     background: #080808;
     border: 1px solid #777;
     border-radius: 10px;
-    box-shadow: 0 12px 30px #0008;
 
     a,
     button {
@@ -158,12 +163,58 @@ $ultra_wide_break: 1908px;
 
       &:hover { background: #252525; }
       &:focus-visible { outline: 2px solid white; outline-offset: -2px; }
+
+      .chevron {
+        height: auto;
+
+        @include ultraWideControl(
+          (
+            width: 16px,
+          ),
+          $start-point: $ultra_wide_break
+        );
+      }
+
+      @include ultraWideControl(
+        (
+          gap: 12px,
+          padding: 12px,
+          border-radius: 5px,
+          font-size: 16px,
+        ),
+        $start-point: $ultra_wide_break
+      );
     }
+
+    @include ultraWideControl(
+      (
+        padding: 8px,
+        border-width: 1px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 
   .project_links a {
-    padding-left: 12px;
-    color: #ddd;
+    padding-left: 18px;
+
+    @include ultraWideControl(
+      (
+        padding-left: 16px,
+      ),
+      $start-point: $ultra_wide_break
+    );
+  }
+
+  .project_links button {
+    padding-left: 18px;
+
+    @include ultraWideControl(
+      (
+        padding-left: 16px,
+      ),
+      $start-point: $ultra_wide_break
+    );
   }
 
   @media (prefers-reduced-motion: reduce) {

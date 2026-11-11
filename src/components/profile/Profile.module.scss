@@ -766,3 +766,8 @@ $ultra_wide_break: 1908px;
     }
   }
 }
+
+// Leave breathing room above the logo when navigating from My Work.
+.container [id^="experience-"] {
+  scroll-margin-top: 24px;
+}
